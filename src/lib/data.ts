@@ -9,7 +9,7 @@ export const site = {
   phone: "+966 53 721 3482",
   linkedin: "https://www.linkedin.com/in/karim-khalil-091830201/",
   github: "", // TODO: add GitHub profile URL
-  url: "https://karimkhalil.dev", // TODO: replace with the deployed domain
+  url: "https://kareemkhalill.github.io/portfolio",
   tagline:
     "I build production AI systems in Saudi Arabia — real-time computer vision for safety and security, and LLM-powered automation that turns hours of manual work into seconds.",
 };
