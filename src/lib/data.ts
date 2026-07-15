@@ -301,9 +301,9 @@ export const experience: Experience[] = [
     location: "Raidah, Saudi Arabia",
     mode: "Remote",
     bullets: [
-      "Built and deployed AI-powered APIs with FastAPI, enabling internal systems to consume real-time inference results.",
-      "Optimized real-time video-processing pipelines for environmental monitoring, improving response latency by ~15%.",
-      "Tested and validated AI services with Postman for consistent performance across deployments.",
+      "Designed and deployed AI-powered APIs using FastAPI to serve real-time computer vision and geospatial AI models.",
+      "Developed an oil spill detection solution using deep learning and satellite/aerial imagery to support environmental monitoring and rapid incident detection.",
+      "Built NDVI (Normalized Difference Vegetation Index) analysis workflows to assess crop health, vegetation stress, and agricultural conditions from remote sensing data.",
     ],
   },
   {
