@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05060b;
+  --surface: #0b0e17;
+  --surface-2: #121828;
+  --border: #1e2538;
+  --foreground: #eef1f8;
+  --muted: #9aa3b8;
+  --faint: #667089;
+  --accent: #38bdf8;
+  --accent-2: #818cf8;
+  --accent-3: #22d3ee;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-borderc: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #05060b;
+}
+
+.hairline {
+  border-color: var(--border);
+}
+
+/* ---------- Gradient text ---------- */
+.text-gradient {
+  background: linear-gradient(105deg, #eef1f8 20%, var(--accent) 55%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Aurora backdrop ---------- */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.aurora::before {
+  width: 700px;
+  height: 700px;
+  left: -12%;
+  top: -25%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(56, 189, 248, 0.05) 40%, transparent 70%);
+  animation: aurora-a 16s ease-in-out infinite alternate;
+}
+
+.aurora::after {
+  width: 800px;
+  height: 800px;
+  right: -18%;
+  top: 5%;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, rgba(129, 140, 248, 0.04) 45%, transparent 70%),
+    radial-gradient(circle at 30% 70%, rgba(34, 211, 238, 0.07), transparent 60%);
+  animation: aurora-b 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-a {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(120px, 80px) scale(1.15); }
+}
+
+@keyframes aurora-b {
+  0% { transform: translate(0, 0) scale(1.05); }
+  100% { transform: translate(-140px, 60px) scale(0.9); }
+}
+
+/* ---------- Grid lines ---------- */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(245, 244, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 244, 240, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 75%);
+}
+
+/* ---------- Spotlight cards ---------- */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(56, 189, 248, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* ---------- Card lift ---------- */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.21, 0.47, 0.32, 0.98), border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 18px 46px -18px rgba(56, 189, 248, 0.18), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Glow button ---------- */
+.btn-glow {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #05060b;
+  box-shadow: 0 6px 26px -8px rgba(56, 189, 248, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 10px 36px -8px rgba(56, 189, 248, 0.65);
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+/* ---------- Pulsing availability dot ---------- */
+.pulse-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #4ade80;
+}
+
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(74, 222, 128, 0.4);
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 1; }
+  80%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ---------- Animated link underline ---------- */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora::before,
+  .aurora::after,
+  .pulse-dot::after {
+    animation: none;
+  }
+}
