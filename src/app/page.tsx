@@ -64,7 +64,7 @@ export default function Home() {
               ].map(({ icon: Icon, big, small }) => (
                 <div key={small} className="group bg-surface p-6 transition-colors hover:bg-surface-2">
                   <Icon size={18} className="text-accent transition-transform group-hover:scale-110" />
-                  <p className="mt-3 text-2xl font-semibold tracking-tight">{big}</p>
+                  <p className="tabular mt-3 text-2xl font-semibold tracking-tight">{big}</p>
                   <p className="mt-1 text-sm text-faint">{small}</p>
                 </div>
               ))}

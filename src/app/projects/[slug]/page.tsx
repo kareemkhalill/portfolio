@@ -60,7 +60,7 @@ export default async function ProjectPage({
         <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border hairline bg-borderc md:grid-cols-3">
           {project.metrics.map((m) => (
             <div key={m.label} className="bg-surface p-6">
-              <p className="text-2xl font-semibold tracking-tight text-accent">{m.value}</p>
+              <p className="tabular text-2xl font-semibold tracking-tight text-accent">{m.value}</p>
               <p className="mt-1 text-sm text-faint">{m.label}</p>
             </div>
           ))}

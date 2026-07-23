@@ -96,8 +96,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Nav />
-        <main className="flex-1 pt-16">{children}</main>
+        <main id="main" className="flex-1 pt-16">{children}</main>
         <Footer />
         <Analytics />
       </body>
