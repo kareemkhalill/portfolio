@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -8,11 +8,10 @@ import { site } from "@/lib/data";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  axes: ["opsz"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -98,7 +97,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script
