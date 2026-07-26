@@ -10,8 +10,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/karim-khalil-091830201/",
   github: "", // TODO: add GitHub profile URL
   url: "https://kareemkhalill.github.io/portfolio",
-  tagline:
-    "I build AI that runs in production, watching for risk in real time and turning hours of manual work into seconds.",
+  tagline: "Computer vision and LLM systems. Built, deployed, running.",
 };
 
 export type Metric = { value: string; label: string };
@@ -44,7 +43,7 @@ export const projects: Project[] = [
     featured: true,
     demoUrl: "https://clientflow-pro-demo.onrender.com",
     oneLiner:
-      "A bilingual (English/Arabic) CRM, booking, quoting, and invoicing platform for service businesses, built to run on their own server with an AI follow-up assistant, WhatsApp delivery, and 222 automated tests behind it.",
+      "Bilingual CRM, booking, and invoicing platform. Self-hosted, AI follow-ups, 222 tests.",
     problem:
       "Service businesses run their operation across tools that don't talk to each other: a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups tracked in someone's memory. Arabic-first businesses have it worse: most affordable software treats right-to-left layout as an afterthought. And subscription SaaS means the business's own client data lives on someone else's servers.",
     solution:
@@ -83,7 +82,7 @@ export const projects: Project[] = [
     category: "LLM & Automation",
     featured: true,
     oneLiner:
-      "An LLM-powered assistant that turns a plain-language WhatsApp message into a delivered report in seconds, no dashboard login, no waiting on an analyst.",
+      "Ask for a report on WhatsApp. Get it back in seconds.",
     problem:
       "Operational teams depend on recurring reports, but producing and distributing them is manual, repetitive work. Requests queue up, analysts get pulled off other work to compile them, and decision-makers wait hours for numbers they need right now, often while they're away from a desk entirely.",
     solution:
@@ -119,7 +118,7 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "Real-time in-cabin AI that catches driver fatigue and distraction before they turn into an accident, not after.",
+      "Catches driver fatigue and distraction before the accident, not after.",
     problem:
       "Driver fatigue and distraction rank among the leading causes of road accidents, yet fleets have no visibility into a driver's state until after something has already gone wrong. Human supervision simply doesn't scale to every vehicle, every minute of every shift.",
     solution:
@@ -153,7 +152,7 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "YOLOv8 monitoring that checks protective-equipment compliance on industrial sites automatically, cutting manual monitoring by roughly 30%.",
+      "YOLOv8 checks PPE compliance on site. 30% less manual monitoring.",
     problem:
       "Industrial sites are required to enforce PPE compliance, helmets, vests, protective gear, but enforcement usually falls on safety officers physically watching workers or scrubbing through footage after the fact. That's slow, expensive, and leaves plenty of blind spots.",
     solution:
@@ -188,7 +187,7 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "An AI security layer for factory surveillance that catches intrusions into restricted zones and alerts in real time, cutting response time by roughly 25%.",
+      "Flags intrusions into restricted zones instantly. 25% faster response.",
     problem:
       "Factories and secure facilities rely on guards watching walls of camera feeds to catch intrusions into restricted areas. Attention fades over a long shift, incidents slip through, and response only starts once someone happens to notice.",
     solution:
@@ -220,7 +219,7 @@ export const projects: Project[] = [
     shortName: "People Counting",
     category: "Computer Vision",
     oneLiner:
-      "A computer vision system that detects and counts people inside restricted areas, giving operations teams live occupancy awareness instead of guesswork.",
+      "Live headcount inside restricted zones. No manual counting.",
     problem:
       "Knowing exactly how many people are inside a restricted or capacity-limited area matters for safety, security, and compliance, but manual headcounts are unreliable and impossible to keep up continuously.",
     solution:
@@ -252,7 +251,7 @@ export const projects: Project[] = [
     shortName: "Activity Detection",
     category: "Computer Vision",
     oneLiner:
-      "Activity-recognition models built on temporal video for elderly safety and posture monitoring, running real-time inference for continuous alerting.",
+      "Reads activity over time for elderly safety and posture alerts.",
     problem:
       "Elderly individuals living or cared for alone face risks like falls, abnormal posture, and prolonged inactivity that go unnoticed without constant human observation, which is both impractical and intrusive to provide.",
     solution:
@@ -284,7 +283,7 @@ export const projects: Project[] = [
     shortName: "Fire & Smoke Detection",
     category: "Computer Vision",
     oneLiner:
-      "A CNN-based early-warning classifier that spots fire and smoke across varied environments, tuned for low-latency deployment on live surveillance feeds.",
+      "Spots fire and smoke on camera, long before a sensor trips.",
     problem:
       "Conventional fire detection reacts only once heat or smoke physically reaches a sensor, by which point the fire is already established. Cameras can see fire far earlier than that, but only if something is watching them intelligently.",
     solution:
@@ -364,33 +363,27 @@ export const experience: Experience[] = [
 export const capabilities = [
   {
     title: "LLM Applications & AI Agents",
-    description:
-      "Assistants and agents that automate real workflows, from report generation to data access to operational tasks, built with LLM integrations, OpenClaw, and Python.",
+    description: "Assistants that run real workflows, not chat demos.",
   },
   {
     title: "Computer Vision Systems",
-    description:
-      "Production YOLOv8 and CNN pipelines for safety, security, and monitoring: PPE compliance, intrusion detection, fire detection, driver monitoring.",
+    description: "YOLOv8 and CNN pipelines on live video, in production.",
   },
   {
     title: "AI-Powered APIs",
-    description:
-      "FastAPI services that put real-time model inference in front of internal systems, tested, validated, and containerized with Docker.",
+    description: "FastAPI inference services, tested and containerized.",
   },
   {
     title: "WhatsApp AI Solutions",
-    description:
-      "AI delivered where teams already work: conversational assistants that take a request and hand back results inside WhatsApp.",
+    description: "AI delivered where teams already work.",
   },
   {
     title: "Workflow Automation",
-    description:
-      "Automation that strips out repetitive manual work, from report compilation to data validation, using Python and LLM-driven workflows.",
+    description: "Manual work removed, from reporting to validation.",
   },
   {
     title: "Data & BI Reliability",
-    description:
-      "Dashboard validation, data quality assurance, and business-process improvement that make analytics something decision-makers can actually trust.",
+    description: "Dashboards decision-makers can trust.",
   },
 ];
 

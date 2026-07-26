@@ -18,7 +18,7 @@ export default function ProjectsPage() {
     <div className="mx-auto max-w-6xl px-6 py-24">
       <SectionHeading
         title="Case studies, not bullet points"
-        description="Each project is documented the way it was built: the business problem, the architecture, the challenges, and the measurable outcome. Most include recorded demos of the live system."
+        description="Problem, architecture, challenges, outcome. Most with demos of the real system."
       />
 
       <h2 className="mt-16 text-lg font-semibold text-foreground">Flagship product</h2>

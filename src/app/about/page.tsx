@@ -14,33 +14,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-24">
-      <SectionHeading eyebrow="About" title="Engineer first. AI is the tool. Outcomes are the job." />
+      <SectionHeading eyebrow="About" title="Engineer first. AI is the tool." />
 
       <Reveal delay={0.1}>
-        <div className="mt-8 space-y-5 leading-relaxed text-muted">
+        <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted">
           <p>
-            I&apos;m {site.name}, an AI Engineer based in AlUla, Saudi Arabia, currently working with
-            Platfarm at the <span className="text-foreground">Royal Commission for AlUla (RCU)</span>,
-            where I build AI applications and automated workflows and keep a Royal Commission
-            platform&apos;s data accurate enough to make decisions on.
+            AI Engineer in AlUla, currently with Platfarm at the{" "}
+            <span className="text-foreground">Royal Commission for AlUla</span>.
           </p>
           <p>
-            My work splits across two halves of applied AI. On the <span className="text-foreground">computer
-            vision</span> side, I&apos;ve shipped real-time systems that keep people safe: PPE compliance
-            monitoring, intrusion detection, fire and smoke detection, and driver-fatigue monitoring, all
-            running as YOLOv8 and CNN pipelines on live video, deployed with Docker, exposed through FastAPI.
-            On the <span className="text-foreground">LLM side</span>, I build assistants and automation that
-            take manual work off someone's plate, like a WhatsApp assistant that turns a plain-language message
-            into a delivered report in seconds. And I ship complete products: <span className="text-foreground">
-            ClientFlow Pro</span>, my bilingual (English/Arabic) CRM and business-management platform with an
-            AI follow-up assistant and WhatsApp integration, ships with 222 automated tests behind it.
+            <span className="text-foreground">Vision:</span> PPE compliance, intrusion, fire, driver fatigue.
+            YOLOv8 and CNN pipelines on live video, Dockerized, served over FastAPI.
           </p>
           <p>
-            What ties it together: I don&apos;t stop at the model. A model that isn&apos;t deployed,
-            monitored, validated, and trusted by the people using it hasn&apos;t created any value yet.
-            My background in platform operations and data validation is exactly why I build AI systems
-            with the operational discipline to survive contact with production.
+            <span className="text-foreground">Language:</span> assistants that do real work, like a WhatsApp
+            bot that returns a report in seconds. Plus{" "}
+            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product with 222 tests.
           </p>
+          <p>I don&apos;t stop at the model. Undeployed models create zero value.</p>
         </div>
       </Reveal>
 

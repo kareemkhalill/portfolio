@@ -40,8 +40,8 @@ export default function ContactPage() {
     <div className="mx-auto max-w-4xl px-6 py-24">
       <SectionHeading
         eyebrow="Contact"
-        title="Tell me what you're trying to build"
-        description="Open to AI engineering roles in Saudi Arabia and the Gulf, remote positions, and consulting work across LLM applications, computer vision, and workflow automation."
+        title="Tell me what you're building"
+        description="Open to AI roles across the Gulf, remote positions, and consulting work."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
