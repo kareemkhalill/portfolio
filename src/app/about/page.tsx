@@ -23,13 +23,13 @@ export default function AboutPage() {
             <span className="text-foreground">Royal Commission for AlUla</span>.
           </p>
           <p>
-            <span className="text-foreground">Vision:</span> PPE compliance, intrusion, fire, driver fatigue.
-            YOLOv8 and CNN pipelines on live video, Dockerized, served over FastAPI.
+            <span className="text-foreground">Now:</span> LLM assistants and automation that do real work,
+            like a WhatsApp bot that returns a report in seconds. Plus{" "}
+            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product with 222 tests.
           </p>
           <p>
-            <span className="text-foreground">Language:</span> assistants that do real work, like a WhatsApp
-            bot that returns a report in seconds. Plus{" "}
-            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product with 222 tests.
+            <span className="text-foreground">Before:</span> computer vision in production. PPE compliance,
+            intrusion, fire, driver fatigue. YOLOv8 and CNN pipelines on live video, Dockerized, served over FastAPI.
           </p>
           <p>I don&apos;t stop at the model. Undeployed models create zero value.</p>
         </div>

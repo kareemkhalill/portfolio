@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import SpotlightCard from "@/components/SpotlightCard";
-import LiveDetection from "@/components/LiveDetection";
+import WhatsAppDemo from "@/components/WhatsAppDemo";
 
 const stats = [
   { big: "8", small: "systems shipped" },
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
 
             <Reveal delay={0.35}>
-              <LiveDetection />
+              <WhatsAppDemo />
             </Reveal>
           </div>
 

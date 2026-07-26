@@ -12,11 +12,11 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name}: AI Engineer in Saudi Arabia | LLM & Computer Vision`,
+    default: `${site.name}: AI Engineer in Saudi Arabia | LLM Apps & AI Automation`,
     template: `%s | ${site.name}: AI Engineer`,
   },
   description:
-    "AI Engineer in Saudi Arabia building production computer vision systems, LLM applications, AI agents, WhatsApp AI assistants, and workflow automation. Experience at the Royal Commission for AlUla (RCU).",
+    "AI Engineer in Saudi Arabia building LLM applications, AI agents, WhatsApp AI assistants, workflow automation, and full-stack AI products. Experience at the Royal Commission for AlUla (RCU).",
   keywords: [
     "AI Engineer",
     "AI Engineer Saudi Arabia",
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     siteName: `${site.name}: AI Engineer`,
     title: `${site.name}: AI Engineer in Saudi Arabia`,
     description:
-      "Production AI systems: computer vision for safety & security, LLM-powered assistants, and workflow automation. Based in AlUla, Saudi Arabia.",
+      "Production AI systems: LLM-powered assistants, workflow automation, and full-stack products. Based in AlUla, Saudi Arabia.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name}: AI Engineer in Saudi Arabia`,
     description:
-      "Production AI systems: computer vision, LLM applications, and AI automation.",
+      "Production AI systems: LLM applications, AI automation, and full-stack products.",
   },
   robots: { index: true, follow: true },
 };
@@ -57,7 +57,7 @@ const personJsonLd = {
   name: site.name,
   jobTitle: "AI Engineer",
   description:
-    "AI Engineer building production computer vision and LLM systems in Saudi Arabia.",
+    "AI Engineer building production LLM applications, automation, and AI products in Saudi Arabia.",
   email: `mailto:${site.email}`,
   telephone: site.phone,
   url: site.url,

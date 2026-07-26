@@ -3,14 +3,14 @@ export const resumeHref = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Karim_Khal
 
 export const site = {
   name: "Karim Khalil",
-  title: "AI Engineer: Computer Vision, LLM Applications & AI Automation",
+  title: "AI Engineer: LLM Applications, AI Automation & Full-Stack Products",
   location: "AlUla, Saudi Arabia",
   email: "kareemkhalil182@gmail.com",
   phone: "+966 53 721 3482",
   linkedin: "https://www.linkedin.com/in/karim-khalil-091830201/",
   github: "", // TODO: add GitHub profile URL
   url: "https://kareemkhalill.github.io/portfolio",
-  tagline: "Computer vision and LLM systems. Built, deployed, running.",
+  tagline: "LLM apps, automation, and full-stack AI products. Built, deployed, running.",
 };
 
 export type Metric = { value: string; label: string };
@@ -366,14 +366,6 @@ export const capabilities = [
     description: "Assistants that run real workflows, not chat demos.",
   },
   {
-    title: "Computer Vision Systems",
-    description: "YOLOv8 and CNN pipelines on live video, in production.",
-  },
-  {
-    title: "AI-Powered APIs",
-    description: "FastAPI inference services, tested and containerized.",
-  },
-  {
     title: "WhatsApp AI Solutions",
     description: "AI delivered where teams already work.",
   },
@@ -382,8 +374,16 @@ export const capabilities = [
     description: "Manual work removed, from reporting to validation.",
   },
   {
-    title: "Data & BI Reliability",
-    description: "Dashboards decision-makers can trust.",
+    title: "Full-Stack AI Products",
+    description: "Complete platforms, from database to deploy.",
+  },
+  {
+    title: "AI-Powered APIs",
+    description: "FastAPI inference services, tested and containerized.",
+  },
+  {
+    title: "Computer Vision Systems",
+    description: "YOLOv8 and CNN pipelines on live video, in production.",
   },
 ];
 
