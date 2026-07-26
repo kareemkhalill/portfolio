@@ -43,8 +43,8 @@ export default async function ProjectPage({
         <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">
           <ArrowLeft size={16} /> All projects
         </Link>
-        <p className="mt-8 text-xs font-medium uppercase tracking-[0.2em] text-accent">{project.category}</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">{project.name}</h1>
+        <p className="label-mono mt-8 text-accent">{project.category}</p>
+        <h1 className="font-display mt-3 text-4xl font-semibold md:text-6xl">{project.name}</h1>
         <p className="mt-5 text-lg leading-relaxed text-muted">{project.oneLiner}</p>
         <div className="mt-6 flex flex-wrap gap-2">
           {project.stack.map((t) => (
@@ -70,10 +70,26 @@ export default async function ProjectPage({
       {/* Demo */}
       <Reveal delay={0.15}>
         <div className="mt-12">
-          <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold tracking-tight">
-            {project.simulated ? "Interactive demo" : "Demo"}
+          <h2 className="font-display mb-4 flex items-center gap-2 text-2xl font-semibold">
+            {project.demoUrl ? "Live demo" : project.simulated ? "Interactive demo" : "Demo"}
           </h2>
-          {project.driveVideoId ? (
+          {project.demoUrl ? (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-lift group flex items-center justify-between rounded-2xl border hairline bg-surface p-6"
+            >
+              <div>
+                <p className="font-medium">Open the live application</p>
+                <p className="mt-1 text-sm text-muted">
+                  {project.demoUrl.replace("https://", "")} — hosted demo with seeded sample data. First load may take
+                  a moment while the free-tier server wakes up.
+                </p>
+              </div>
+              <ArrowRight size={20} className="shrink-0 text-accent transition-transform group-hover:translate-x-1" />
+            </a>
+          ) : project.driveVideoId ? (
             <DriveVideo id={project.driveVideoId} title={project.name} />
           ) : project.simulated ? (
             <WhatsAppDemo />

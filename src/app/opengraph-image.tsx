@@ -16,18 +16,36 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #05060b 60%, #0c1226 100%)",
-          color: "#f4f4f5",
+          background: "linear-gradient(135deg, #08080d 55%, #16102a 100%)",
+          color: "#f3f2f8",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", color: "#38bdf8", fontSize: 28, letterSpacing: 6, textTransform: "uppercase" }}>
-          AI Engineer · Saudi Arabia
+        <div
+          style={{
+            display: "flex",
+            color: "#8b5cf6",
+            fontSize: 26,
+            letterSpacing: 8,
+            textTransform: "uppercase",
+            fontFamily: "monospace",
+          }}
+        >
+          AI Engineer — Saudi Arabia
         </div>
-        <div style={{ display: "flex", fontSize: 84, fontWeight: 700, marginTop: 24 }}>Karim Khalil</div>
-        <div style={{ display: "flex", fontSize: 34, color: "#a1a1aa", marginTop: 24, maxWidth: 900, lineHeight: 1.4 }}>
-          Production computer vision, LLM applications & AI automation — Royal Commission for AlUla (RCU)
+        <div style={{ display: "flex", fontSize: 92, fontWeight: 700, marginTop: 28 }}>Karim Khalil</div>
+        <div style={{ display: "flex", fontSize: 34, color: "#a5a3b3", marginTop: 28, maxWidth: 950, lineHeight: 1.4 }}>
+          Production computer vision, LLM applications &amp; full-stack AI products — Royal Commission for AlUla (RCU)
         </div>
+        <div
+          style={{
+            display: "flex",
+            marginTop: 48,
+            height: 6,
+            width: 220,
+            background: "linear-gradient(90deg, #8b5cf6, #ff6f5e)",
+          }}
+        />
       </div>
     ),
     { ...size }

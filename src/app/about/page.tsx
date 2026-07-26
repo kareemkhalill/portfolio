@@ -31,7 +31,9 @@ export default function AboutPage() {
             YOLOv8 and CNN pipelines running on live video, deployed with Docker, exposed through FastAPI.
             On the <span className="text-foreground">LLM side</span>, I build assistants and automation
             that remove manual work — like a WhatsApp assistant that turns a plain-language message into
-            a delivered report in seconds.
+            a delivered report in seconds. And I ship complete products: <span className="text-foreground">ClientFlow
+            Pro</span>, my bilingual (English/Arabic) CRM and business-management platform with an AI follow-up
+            assistant and WhatsApp integration, carries 222 automated tests.
           </p>
           <p>
             What ties it together: I don&apos;t stop at the model. A model that isn&apos;t deployed,

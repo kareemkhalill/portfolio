@@ -11,9 +11,12 @@ export default function SectionHeading({
 }) {
   return (
     <Reveal>
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
-      <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
-      {description && <p className="mt-4 max-w-2xl text-muted">{description}</p>}
+      <p className="label-mono flex items-center gap-3 text-accent">
+        <span className="inline-block h-px w-8 bg-accent" aria-hidden="true" />
+        {eyebrow}
+      </p>
+      <h2 className="font-display mt-4 max-w-2xl text-3xl font-semibold md:text-5xl">{title}</h2>
+      {description && <p className="mt-4 max-w-2xl leading-relaxed text-muted">{description}</p>}
     </Reveal>
   );
 }

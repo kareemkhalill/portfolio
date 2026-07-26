@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
+  const product = projects.filter((p) => p.category === "Full-Stack & AI Product");
   const llm = projects.filter((p) => p.category === "LLM & Automation");
   const cv = projects.filter((p) => p.category === "Computer Vision");
 
@@ -21,7 +22,14 @@ export default function ProjectsPage() {
         description="Each project is documented the way it was built: the business problem, the architecture, the challenges, and the measurable outcome. Most include recorded demos of the live system."
       />
 
-      <h2 className="mt-16 text-sm font-medium uppercase tracking-[0.2em] text-faint">
+      <h2 className="label-mono mt-16 text-faint">Flagship Product</h2>
+      <div className="mt-6 grid gap-6">
+        {product.map((p, i) => (
+          <ProjectCard key={p.slug} project={p} delay={i * 0.05} />
+        ))}
+      </div>
+
+      <h2 className="label-mono mt-16 text-faint">
         LLM Applications & Automation
       </h2>
       <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -30,9 +38,7 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <h2 className="mt-16 text-sm font-medium uppercase tracking-[0.2em] text-faint">
-        Computer Vision Systems
-      </h2>
+      <h2 className="label-mono mt-16 text-faint">Computer Vision Systems</h2>
       <div className="mt-6 grid gap-6 md:grid-cols-2">
         {cv.map((p, i) => (
           <ProjectCard key={p.slug} project={p} delay={i * 0.05} />

@@ -20,7 +20,8 @@ export type Project = {
   slug: string;
   name: string;
   shortName: string;
-  category: "Computer Vision" | "LLM & Automation";
+  category: "Computer Vision" | "LLM & Automation" | "Full-Stack & AI Product";
+  demoUrl?: string;
   oneLiner: string;
   problem: string;
   solution: string;
@@ -35,6 +36,46 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "clientflow-pro",
+    name: "ClientFlow Pro",
+    shortName: "ClientFlow Pro",
+    category: "Full-Stack & AI Product",
+    featured: true,
+    demoUrl: "https://clientflow-pro-demo.onrender.com",
+    oneLiner:
+      "A bilingual (English/Arabic) self-hosted CRM, booking, quoting, and invoicing platform for service businesses — with an AI follow-up assistant, WhatsApp integration, a passwordless customer portal, and 222 automated tests.",
+    problem:
+      "Service businesses run their operation across disconnected tools — a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups in someone's head. Arabic-first businesses are doubly underserved: most affordable tools have no real RTL support. And subscription SaaS means their client data lives on someone else's servers.",
+    solution:
+      "I designed and built ClientFlow Pro end-to-end: one self-hosted platform covering the entire client lifecycle — leads and pipeline, appointment booking with conflict prevention, quotes that convert to invoices with PDF export and token-secured public pages, payments tracking, tasks, support tickets, expenses, automations, and analytics. Fully localized in English and Arabic with true RTL layout. Optional AI (OpenAI/Anthropic) drafts follow-up messages from each client's history, and WhatsApp integration (Meta Cloud API) delivers bookings, quotes, and invoices where clients actually are — both dormant until the owner adds their own keys.",
+    architecture: [
+      { step: "Laravel 12 Monolith", detail: "PHP 8.4, Blade + Livewire 3 + Alpine.js reactive UI, Tailwind CSS — deployable on ordinary shared hosting via a self-locking browser install wizard." },
+      { step: "Roles & Permissions", detail: "Owner / Manager / Staff / Accountant with staff-scoped data visibility (Spatie Permission), plus an opt-in audit log of who changed what." },
+      { step: "Booking Engine", detail: "Staff availability, unavailable-date exceptions, double-booking prevention, drag-to-reschedule time-grid calendar, and a rate-limited public booking page." },
+      { step: "Quotes → Invoices Lifecycle", detail: "Line items, proposal sections, PDF export, email delivery, typed-signature acceptance on token-gated public pages, one-click conversion, payment tracking with automatic status rollup." },
+      { step: "Integrations Layer", detail: "WhatsApp (Meta Cloud API), AI follow-up drafting (OpenAI/Anthropic), SMTP — all off by default, secrets encrypted, failures logged without breaking the triggering flow." },
+      { step: "Extensibility & Ops", detail: "Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, system-health dashboard — verified by 222 PHPUnit tests." },
+    ],
+    challenges: [
+      "True bilingual product: every screen works in English and Arabic with real RTL layout, not a bolted-on translation.",
+      "A passwordless customer portal: signed, time-limited magic links give clients access to appointments, quotes, invoices, and documents with no password to leak.",
+      "Integrations that fail safely: WhatsApp/AI/email calls are real HTTP integrations, but a send failure can never break the booking or invoice flow that triggered it.",
+      "Shipping as a product, not a project: install wizard, buyer docs, demo seed data, packaging, and license activation for marketplace distribution.",
+    ],
+    impact: [
+      "Replaces four or five separate SaaS subscriptions with one self-hosted install the business owns outright.",
+      "AI-drafted follow-ups turn each client's pipeline status and history into a ready-to-review message — in the business's language.",
+      "WhatsApp delivery meets clients on the channel Gulf businesses actually use.",
+      "222 automated tests across every module make it safe to extend — engineering discipline most portfolio projects never show.",
+    ],
+    metrics: [
+      { value: "222", label: "automated tests (PHPUnit)" },
+      { value: "EN + AR", label: "full bilingual with true RTL" },
+      { value: "v1.1", label: "packaged, documented release" },
+    ],
+    stack: ["Laravel 12", "PHP 8.4", "Livewire 3", "Alpine.js", "Tailwind CSS", "MySQL", "Sanctum", "DomPDF"],
+  },
   {
     slug: "whatsapp-reporting-assistant",
     name: "AI-Powered WhatsApp Reporting Assistant",
