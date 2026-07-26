@@ -9,7 +9,6 @@ import LiveDetection from "@/components/LiveDetection";
 
 const stats = [
   { big: "8", small: "systems shipped" },
-  { big: "222", small: "tests on my product" },
   { big: "RCU", small: "Royal Commission for AlUla" },
   { big: "KSA", small: "based in Saudi Arabia" },
 ];
@@ -71,7 +70,7 @@ export default function Home() {
 
           {/* Stats */}
           <Reveal delay={0.4}>
-            <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border hairline bg-borderc md:grid-cols-4">
+            <div className="mt-16 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border hairline bg-borderc">
               {stats.map(({ big, small }) => (
                 <div key={small} className="bg-surface p-5 transition-colors hover:bg-surface-2">
                   <p className="tabular text-2xl font-semibold tracking-tight text-accent">{big}</p>
@@ -126,7 +125,7 @@ export default function Home() {
       {/* Experience */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHeading title="Built where it counts" />
+          <SectionHeading title="Where I've worked" />
           <div className="mt-10 space-y-px overflow-hidden rounded-2xl border hairline bg-borderc">
             {experience.map((e, i) => (
               <Reveal key={e.company} delay={i * 0.05}>
