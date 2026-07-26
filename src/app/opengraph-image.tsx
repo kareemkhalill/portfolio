@@ -16,15 +16,15 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #08080d 55%, #16102a 100%)",
-          color: "#f3f2f8",
+          background: "linear-gradient(135deg, #0b0c10 60%, #14152a 100%)",
+          color: "#f2f3f5",
           fontFamily: "sans-serif",
         }}
       >
         <div
           style={{
             display: "flex",
-            color: "#8b5cf6",
+            color: "#818cf8",
             fontSize: 26,
             letterSpacing: 8,
             textTransform: "uppercase",
@@ -34,18 +34,10 @@ export default function OgImage() {
           AI Engineer — Saudi Arabia
         </div>
         <div style={{ display: "flex", fontSize: 92, fontWeight: 700, marginTop: 28 }}>Karim Khalil</div>
-        <div style={{ display: "flex", fontSize: 34, color: "#a5a3b3", marginTop: 28, maxWidth: 950, lineHeight: 1.4 }}>
+        <div style={{ display: "flex", fontSize: 34, color: "#9a9ca8", marginTop: 28, maxWidth: 950, lineHeight: 1.4 }}>
           Production computer vision, LLM applications &amp; full-stack AI products — Royal Commission for AlUla (RCU)
         </div>
-        <div
-          style={{
-            display: "flex",
-            marginTop: 48,
-            height: 6,
-            width: 220,
-            background: "linear-gradient(90deg, #8b5cf6, #ff6f5e)",
-          }}
-        />
+        <div style={{ display: "flex", marginTop: 48, height: 6, width: 220, background: "#6366f1" }} />
       </div>
     ),
     { ...size }

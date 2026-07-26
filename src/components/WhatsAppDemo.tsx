@@ -121,7 +121,7 @@ export default function WhatsAppDemo() {
               key={p}
               onClick={() => run(p)}
               disabled={busy}
-              className="rounded-full border hairline px-3 py-1.5 text-xs text-muted transition-colors hover:border-[rgba(36,66,216,0.45)] hover:text-foreground disabled:opacity-40"
+              className="rounded-full border hairline px-3 py-1.5 text-xs text-muted transition-colors hover:border-[rgba(99,102,241,0.5)] hover:text-foreground disabled:opacity-40"
             >
               {p}
             </button>

@@ -43,7 +43,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border hairline bg-surface px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-[rgba(139,92,246,0.5)]"
+                className="rounded-full border hairline bg-surface px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-[rgba(99,102,241,0.5)]"
               >
                 Get in touch
               </Link>
@@ -149,15 +149,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA — inverted light block, high-contrast close */}
-      <section className="ink-block">
-        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
+      {/* CTA */}
+      <section className="relative border-t hairline">
+        <div className="aurora opacity-70" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 text-center">
           <Reveal>
-            <p className="label-mono text-[rgba(12,10,20,0.5)]">04 — Contact</p>
-            <h2 className="font-display mx-auto mt-4 max-w-2xl text-4xl font-semibold text-[#0c0a14] md:text-5xl">
+            <p className="label-mono text-faint">04 — Contact</p>
+            <h2 className="font-display mx-auto mt-4 max-w-2xl text-4xl font-semibold md:text-5xl">
               Hiring for AI in <span className="text-gradient">Saudi Arabia</span> or the Gulf?
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[rgba(12,10,20,0.65)]">
+            <p className="mx-auto mt-5 max-w-xl text-muted">
               I&apos;m open to AI engineering roles and consulting engagements — LLM applications, computer vision, and automation that ships.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
@@ -167,7 +168,7 @@ export default function Home() {
               <a
                 href={resumeHref}
                 download
-                className="rounded-full border border-[rgba(12,10,20,0.2)] px-7 py-3.5 text-sm font-medium text-[#0c0a14] transition-colors hover:border-[rgba(12,10,20,0.5)]"
+                className="rounded-full border hairline px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-[rgba(99,102,241,0.5)]"
               >
                 Download CV
               </a>

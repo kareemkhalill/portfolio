@@ -7,9 +7,9 @@ import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/data";
 
 const GRADIENTS: Record<Project["category"], string> = {
-  "Full-Stack & AI Product": "linear-gradient(135deg, #8b5cf6 0%, #ff6f5e 100%)",
-  "LLM & Automation": "linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%)",
-  "Computer Vision": "linear-gradient(135deg, #ff6f5e 0%, #f9c74f 100%)",
+  "Full-Stack & AI Product": "linear-gradient(135deg, #6366f1 0%, #818cf8 100%)",
+  "LLM & Automation": "linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)",
+  "Computer Vision": "linear-gradient(135deg, #818cf8 0%, #a5b4fc 100%)",
 };
 
 export default function ProjectShowreel({ projects }: { projects: Project[] }) {

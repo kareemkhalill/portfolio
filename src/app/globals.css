@@ -1,19 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08080d;
-  --surface: #101018;
-  --surface-2: #181824;
-  --border: #262631;
-  --foreground: #f3f2f8;
-  --muted: #a5a3b3;
-  --faint: #6d6b7c;
-  --accent: #8b5cf6;
-  --accent-2: #ff6f5e;
-  --accent-3: #22d3ee;
-  --accent-soft: rgba(139, 92, 246, 0.14);
-  --ink: #f3f2f8;
-  --paper: #08080d;
+  --background: #0b0c10;
+  --surface: #121319;
+  --surface-2: #1a1c24;
+  --border: #262832;
+  --foreground: #f2f3f5;
+  --muted: #9a9ca8;
+  --faint: #63656f;
+  --accent: #6366f1;
+  --accent-2: #818cf8;
+  --accent-soft: rgba(99, 102, 241, 0.14);
 }
 
 @theme inline {
@@ -27,11 +24,8 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-soft: var(--accent-soft);
-  --color-ink: var(--ink);
-  --color-paper: var(--paper);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-playfair);
 }
 
 html {
@@ -56,8 +50,9 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.01em;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 600;
 }
 
 .label-mono {
@@ -125,15 +120,12 @@ a {
   background: var(--border);
 }
 
-/* ---------- Gradient headline accent ---------- */
+/* ---------- Accent headline word ---------- */
 .text-gradient {
-  background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 60%, var(--accent-3) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent-2);
 }
 
-/* ---------- Aurora backdrop ---------- */
+/* ---------- Aurora backdrop (single hue, subtle) ---------- */
 .aurora {
   position: absolute;
   inset: 0;
@@ -151,32 +143,31 @@ a {
 }
 
 .aurora::before {
-  width: 720px;
-  height: 720px;
-  left: -14%;
+  width: 680px;
+  height: 680px;
+  left: -12%;
   top: -26%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, rgba(139, 92, 246, 0.07) 42%, transparent 70%);
-  animation: aurora-a 17s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.05) 45%, transparent 70%);
+  animation: aurora-a 18s ease-in-out infinite alternate;
 }
 
 .aurora::after {
-  width: 800px;
-  height: 800px;
-  right: -18%;
-  top: 2%;
-  background: radial-gradient(circle, rgba(255, 111, 94, 0.16) 0%, rgba(255, 111, 94, 0.05) 45%, transparent 70%),
-    radial-gradient(circle at 30% 75%, rgba(34, 211, 238, 0.09), transparent 60%);
-  animation: aurora-b 21s ease-in-out infinite alternate;
+  width: 620px;
+  height: 620px;
+  right: -14%;
+  top: 6%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.03) 45%, transparent 70%);
+  animation: aurora-b 22s ease-in-out infinite alternate;
 }
 
 @keyframes aurora-a {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(110px, 75px) scale(1.14); }
+  100% { transform: translate(100px, 70px) scale(1.1); }
 }
 
 @keyframes aurora-b {
   0% { transform: translate(0, 0) scale(1.05); }
-  100% { transform: translate(-130px, 55px) scale(0.9); }
+  100% { transform: translate(-110px, 50px) scale(0.92); }
 }
 
 /* ---------- Blueprint grid ---------- */
@@ -184,8 +175,8 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(to right, rgba(243, 242, 248, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(243, 242, 248, 0.045) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(242, 243, 245, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 243, 245, 0.045) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 75%);
 }
@@ -202,7 +193,7 @@ a {
   inset: 0;
   opacity: 0;
   transition: opacity 0.35s ease;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(139, 92, 246, 0.14), transparent 60%);
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.12), transparent 60%);
   pointer-events: none;
 }
 
@@ -215,33 +206,23 @@ a {
 }
 
 .card-lift:hover {
-  transform: translateY(-5px) scale(1.01);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 20px 48px -18px rgba(139, 92, 246, 0.28), 0 8px 24px -12px rgba(0, 0, 0, 0.55);
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 18px 40px -18px rgba(99, 102, 241, 0.25), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* ---------- Primary glow button ---------- */
+/* ---------- Primary button: solid, one hue ---------- */
 .btn-glow {
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  background: var(--accent);
   color: #ffffff;
-  box-shadow: 0 8px 28px -8px rgba(139, 92, 246, 0.55);
-  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 6px 22px -8px rgba(99, 102, 241, 0.55);
+  transition: background 0.25s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .btn-glow:hover {
-  box-shadow: 0 12px 38px -8px rgba(139, 92, 246, 0.7);
+  background: var(--accent-2);
+  box-shadow: 0 10px 30px -8px rgba(99, 102, 241, 0.7);
   transform: translateY(-2px);
-  filter: brightness(1.08);
-}
-
-/* ---------- Inverted (paper) block for high-contrast CTA ---------- */
-.ink-block {
-  background: linear-gradient(160deg, #f3f2f8 0%, #eae7f5 100%);
-  color: #0c0a14;
-}
-
-.ink-block .hairline {
-  border-color: rgba(12, 10, 20, 0.12);
 }
 
 /* ---------- Pulsing availability dot ---------- */
