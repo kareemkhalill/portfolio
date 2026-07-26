@@ -4,7 +4,7 @@ export default function DriveVideo({ id, title }: { id: string; title: string })
       <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
         <iframe
           src={`https://drive.google.com/file/d/${id}/preview`}
-          title={`${title} — demo video`}
+          title={`${title}: demo video`}
           className="absolute inset-0 h-full w-full"
           allow="autoplay; fullscreen"
           allowFullScreen

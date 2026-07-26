@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Karim Khalil — AI Engineer in Saudi Arabia. Open to AI engineering roles, consulting, and project inquiries.",
+    "Contact Karim Khalil, AI Engineer in Saudi Arabia. Open to AI engineering roles, consulting, and project inquiries.",
 };
 
 const channels = [
@@ -17,7 +17,7 @@ const channels = [
     label: "Email",
     value: site.email,
     href: `mailto:${site.email}`,
-    note: "Best for role and project inquiries — I reply quickly.",
+    note: "Best for role and project inquiries, I reply quickly.",
   },
   {
     icon: LinkedinIcon,
@@ -41,7 +41,7 @@ export default function ContactPage() {
       <SectionHeading
         eyebrow="Contact"
         title="Let's talk about what AI can do for your team"
-        description="Open to AI engineering roles in Saudi Arabia and the Gulf, remote positions, and consulting engagements — LLM applications, computer vision, and workflow automation."
+        description="Open to AI engineering roles in Saudi Arabia and the Gulf, remote positions, and consulting engagements: LLM applications, computer vision, and workflow automation."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -66,10 +66,10 @@ export default function ContactPage() {
         <div className="mt-12 flex flex-col items-start gap-6 rounded-2xl border hairline bg-surface p-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="flex items-center gap-2 text-sm text-faint">
-              <MapPin size={14} className="text-accent" /> {site.location} — on-site, hybrid, or remote
+              <MapPin size={14} className="text-accent" /> {site.location}, on-site, hybrid, or remote
             </p>
             <h3 className="mt-2 text-xl font-semibold tracking-tight">Want the full picture?</h3>
-            <p className="mt-1 text-sm text-muted">Download my CV — everything on this site, in one page.</p>
+            <p className="mt-1 text-sm text-muted">Download my CV, everything on this site, in one page.</p>
           </div>
           <a
             href={resumeHref}

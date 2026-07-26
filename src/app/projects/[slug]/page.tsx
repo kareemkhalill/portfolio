@@ -83,7 +83,7 @@ export default async function ProjectPage({
               <div>
                 <p className="font-medium">Open the live application</p>
                 <p className="mt-1 text-sm text-muted">
-                  {project.demoUrl.replace("https://", "")} — hosted demo with seeded sample data. First load may take
+                  {project.demoUrl.replace("https://", "")}. Hosted demo with seeded sample data, first load may take
                   a moment while the free-tier server wakes up.
                 </p>
               </div>

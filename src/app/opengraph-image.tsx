@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Karim Khalil — AI Engineer in Saudi Arabia";
+export const alt = "Karim Khalil, AI Engineer in Saudi Arabia";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default function OgImage() {
         </div>
         <div style={{ display: "flex", fontSize: 84, fontWeight: 700, marginTop: 24 }}>Karim Khalil</div>
         <div style={{ display: "flex", fontSize: 34, color: "#a1a1aa", marginTop: 24, maxWidth: 900, lineHeight: 1.4 }}>
-          Production computer vision, LLM applications & AI automation — Royal Commission for AlUla (RCU)
+          Production computer vision, LLM applications & AI automation. Royal Commission for AlUla (RCU)
         </div>
       </div>
     ),

@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Karim Khalil — AI Engineer in AlUla, Saudi Arabia. Computer vision, LLM applications, and AI automation, currently at the Royal Commission for AlUla (RCU).",
+    "Karim Khalil, AI Engineer in AlUla, Saudi Arabia. Computer vision, LLM applications, and AI automation, currently at the Royal Commission for AlUla (RCU).",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Reveal delay={0.1}>
         <div className="mt-8 space-y-5 leading-relaxed text-muted">
           <p>
-            I&apos;m {site.name}, an AI Engineer based in AlUla, Saudi Arabia — currently working with
+            I&apos;m {site.name}, an AI Engineer based in AlUla, Saudi Arabia, currently working with
             Platfarm at the <span className="text-foreground">Royal Commission for AlUla (RCU)</span>,
             where I build AI applications and automated workflows and keep a Royal Commission
             platform&apos;s data accurate and reliable.
@@ -27,10 +27,10 @@ export default function AboutPage() {
           <p>
             My work spans the two halves of applied AI. On the <span className="text-foreground">computer
             vision</span> side, I&apos;ve shipped real-time systems that keep people safe: PPE compliance
-            monitoring, intrusion detection, fire and smoke detection, and driver-fatigue monitoring —
+            monitoring, intrusion detection, fire and smoke detection, and driver-fatigue monitoring:
             YOLOv8 and CNN pipelines running on live video, deployed with Docker, exposed through FastAPI.
             On the <span className="text-foreground">LLM side</span>, I build assistants and automation
-            that remove manual work — like a WhatsApp assistant that turns a plain-language message into
+            that remove manual work, like a WhatsApp assistant that turns a plain-language message into
             a delivered report in seconds. And I ship complete products: <span className="text-foreground">ClientFlow
             Pro</span>, my bilingual (English/Arabic) CRM and business-management platform with an AI follow-up
             assistant and WhatsApp integration, carries 222 automated tests.

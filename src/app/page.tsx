@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative">
         <div className="aurora" />
         <div className="grid-bg" />
-        <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-24 md:pt-36">
+        <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-24">
           <Reveal>
             <div className="flex flex-wrap items-center gap-3">
               <span className="flex items-center gap-2.5 rounded-full border hairline bg-surface/60 px-4 py-1.5 text-sm text-muted backdrop-blur">
@@ -30,7 +30,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-              AI systems that <span className="text-gradient">watch, understand, and act</span> — in production, not in notebooks.
+              AI systems that <span className="text-gradient">watch, understand, and act</span> in production, not in notebooks.
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -79,7 +79,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What I build"
             title="AI that solves business problems, end to end"
-            description="From the model to the API to the workflow around it — systems designed to remove manual work, reduce risk, and put answers in front of the people who need them."
+            description="From the model to the API to the workflow around it, systems designed to remove manual work, reduce risk, and put answers in front of the people who need them."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c, i) => (
@@ -100,7 +100,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Selected work"
             title="Case studies with real demos"
-            description="Every system below shipped. Most include recorded demos of the software running — not mockups."
+            description="Every system below shipped. Most include recorded demos of the software running, not mockups."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {featured.map((p, i) => (
@@ -121,7 +121,7 @@ export default function Home() {
       {/* Experience */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHeading eyebrow="Experience" title="Where I've shipped" />
+          <SectionHeading title="Where I've shipped" />
           <div className="mt-12 space-y-px overflow-hidden rounded-2xl border hairline bg-borderc">
             {experience.map((e, i) => (
               <Reveal key={e.company} delay={i * 0.05}>
@@ -157,11 +157,11 @@ export default function Home() {
               Hiring for AI in <span className="text-gradient">Saudi Arabia</span> or the Gulf?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted">
-              I&apos;m open to AI engineering roles and consulting engagements — LLM applications, computer vision, and automation that ships.
+              I&apos;m open to AI engineering roles and consulting engagements: LLM applications, computer vision, and automation that ships.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="btn-glow rounded-full px-6 py-3 text-sm font-medium">
-                Start a conversation
+                Get in touch
               </Link>
               <a
                 href={resumeHref}

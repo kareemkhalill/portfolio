@@ -14,13 +14,13 @@ const scenarios: Record<string, Msg[]> = {
   ],
   "How did the platform perform this week?": [
     { from: "bot", text: "Let me pull this week's platform performance…" },
-    { from: "bot", text: "Weekly performance summary is ready — uptime, data-quality checks, and activity trends included.", report: true },
+    { from: "bot", text: "Weekly performance summary is ready: uptime, data-quality checks, and activity trends included.", report: true },
     { from: "bot", text: "Want me to schedule this as a recurring Monday report?" },
   ],
   "Generate the data quality summary": [
     { from: "bot", text: "Running data-quality validation across the dashboards…" },
     { from: "bot", text: "Validation complete ✅ Here's the data-quality summary.", report: true },
-    { from: "bot", text: "All checks documented. Ask me anytime — I'm available 24/7." },
+    { from: "bot", text: "All checks documented. Ask me anytime, I'm available 24/7." },
   ],
 };
 

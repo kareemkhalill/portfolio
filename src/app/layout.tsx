@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — AI Engineer in Saudi Arabia | LLM & Computer Vision`,
-    template: `%s | ${site.name} — AI Engineer`,
+    default: `${site.name}: AI Engineer in Saudi Arabia | LLM & Computer Vision`,
+    template: `%s | ${site.name}: AI Engineer`,
   },
   description:
     "AI Engineer in Saudi Arabia building production computer vision systems, LLM applications, AI agents, WhatsApp AI assistants, and workflow automation. Experience at the Royal Commission for AlUla (RCU).",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: site.url,
-    siteName: `${site.name} — AI Engineer`,
-    title: `${site.name} — AI Engineer in Saudi Arabia`,
+    siteName: `${site.name}: AI Engineer`,
+    title: `${site.name}: AI Engineer in Saudi Arabia`,
     description:
       "Production AI systems: computer vision for safety & security, LLM-powered assistants, and workflow automation. Based in AlUla, Saudi Arabia.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — AI Engineer in Saudi Arabia`,
+    title: `${site.name}: AI Engineer in Saudi Arabia`,
     description:
       "Production AI systems: computer vision, LLM applications, and AI automation.",
   },
