@@ -43,8 +43,8 @@ export default async function ProjectPage({
         <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">
           <ArrowLeft size={16} /> All projects
         </Link>
-        <p className="label-mono mt-8 text-accent">{project.category}</p>
-        <h1 className="font-display mt-3 text-4xl font-semibold md:text-6xl">{project.name}</h1>
+        <p className="mt-8 text-xs font-medium uppercase tracking-[0.2em] text-accent">{project.category}</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">{project.name}</h1>
         <p className="mt-5 text-lg leading-relaxed text-muted">{project.oneLiner}</p>
         <div className="mt-6 flex flex-wrap gap-2">
           {project.stack.map((t) => (
@@ -70,7 +70,7 @@ export default async function ProjectPage({
       {/* Demo */}
       <Reveal delay={0.15}>
         <div className="mt-12">
-          <h2 className="font-display mb-4 flex items-center gap-2 text-2xl font-semibold">
+          <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold tracking-tight">
             {project.demoUrl ? "Live demo" : project.simulated ? "Interactive demo" : "Demo"}
           </h2>
           {project.demoUrl ? (

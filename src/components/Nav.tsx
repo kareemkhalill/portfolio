@@ -15,11 +15,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-[rgba(8,8,13,0.75)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-[rgba(9,9,11,0.75)] backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-display text-lg font-semibold tracking-tight">
+        <Link href="/" className="font-semibold tracking-tight">
           Karim Khalil
-          <span className="label-mono ml-3 hidden text-faint sm:inline">AI Engineer</span>
+          <span className="ml-2 text-xs font-normal text-faint">AI Engineer</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -27,12 +27,16 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="link-underline label-mono text-muted transition-colors hover:text-foreground"
+              className="link-underline text-sm text-muted transition-colors hover:text-foreground"
             >
               {l.label}
             </Link>
           ))}
-          <a href={resumeHref} download className="btn-glow rounded-full px-4 py-2 text-sm font-medium">
+          <a
+            href={resumeHref}
+            download
+            className="btn-glow rounded-full px-4 py-1.5 text-sm font-medium"
+          >
             Download CV
           </a>
         </div>
@@ -54,7 +58,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="label-mono block py-3 text-muted hover:text-foreground"
+              className="block py-3 text-sm text-muted hover:text-foreground"
             >
               {l.label}
             </Link>
@@ -62,12 +66,7 @@ export default function Nav() {
           <a href={resumeHref} download className="mt-2 block py-3 text-sm font-medium text-accent">
             Download CV
           </a>
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block py-3 text-sm text-muted hover:text-foreground"
-          >
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="block py-3 text-sm text-muted hover:text-foreground">
             LinkedIn
           </a>
         </div>

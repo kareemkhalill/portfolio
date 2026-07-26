@@ -76,7 +76,7 @@ export default function WhatsAppDemo() {
               <div
                 className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                   m.from === "user"
-                    ? "rounded-br-sm bg-accent text-white"
+                    ? "rounded-br-sm bg-accent text-[#05060b]"
                     : "rounded-bl-sm bg-surface-2 text-foreground"
                 }`}
               >
@@ -121,7 +121,7 @@ export default function WhatsAppDemo() {
               key={p}
               onClick={() => run(p)}
               disabled={busy}
-              className="rounded-full border hairline px-3 py-1.5 text-xs text-muted transition-colors hover:border-[rgba(99,102,241,0.5)] hover:text-foreground disabled:opacity-40"
+              className="rounded-full border hairline px-3 py-1.5 text-xs text-muted transition-colors hover:border-[rgba(56,189,248,0.5)] hover:text-foreground disabled:opacity-40"
             >
               {p}
             </button>

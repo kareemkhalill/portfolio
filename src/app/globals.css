@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0c10;
-  --surface: #121319;
-  --surface-2: #1a1c24;
-  --border: #262832;
-  --foreground: #f2f3f5;
-  --muted: #9a9ca8;
-  --faint: #63656f;
-  --accent: #6366f1;
+  --background: #05060b;
+  --surface: #0b0e17;
+  --surface-2: #121828;
+  --border: #1e2538;
+  --foreground: #eef1f8;
+  --muted: #9aa3b8;
+  --faint: #667089;
+  --accent: #38bdf8;
   --accent-2: #818cf8;
-  --accent-soft: rgba(99, 102, 241, 0.14);
+  --accent-3: #22d3ee;
+  --accent-soft: rgba(56, 189, 248, 0.12);
 }
 
 @theme inline {
@@ -42,27 +43,10 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #ffffff;
+  color: #05060b;
 }
 
-.hairline {
-  border-color: var(--border);
-}
-
-.font-display {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  letter-spacing: -0.03em;
-  font-weight: 600;
-}
-
-.label-mono {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-/* ---------- Interaction & a11y ---------- */
+/* ---------- Interaction & a11y polish ---------- */
 button,
 [role="button"],
 a {
@@ -72,7 +56,7 @@ a {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .btn-glow:active,
@@ -90,7 +74,7 @@ a {
   top: -3rem;
   z-index: 100;
   background: var(--accent);
-  color: #ffffff;
+  color: #05060b;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -120,12 +104,19 @@ a {
   background: var(--border);
 }
 
-/* ---------- Accent headline word ---------- */
-.text-gradient {
-  color: var(--accent-2);
+.hairline {
+  border-color: var(--border);
 }
 
-/* ---------- Aurora backdrop (single hue, subtle) ---------- */
+/* ---------- Gradient text ---------- */
+.text-gradient {
+  background: linear-gradient(105deg, #eef1f8 20%, var(--accent) 55%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Aurora backdrop ---------- */
 .aurora {
   position: absolute;
   inset: 0;
@@ -143,45 +134,46 @@ a {
 }
 
 .aurora::before {
-  width: 680px;
-  height: 680px;
+  width: 700px;
+  height: 700px;
   left: -12%;
-  top: -26%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.05) 45%, transparent 70%);
-  animation: aurora-a 18s ease-in-out infinite alternate;
+  top: -25%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(56, 189, 248, 0.05) 40%, transparent 70%);
+  animation: aurora-a 16s ease-in-out infinite alternate;
 }
 
 .aurora::after {
-  width: 620px;
-  height: 620px;
-  right: -14%;
-  top: 6%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.03) 45%, transparent 70%);
-  animation: aurora-b 22s ease-in-out infinite alternate;
+  width: 800px;
+  height: 800px;
+  right: -18%;
+  top: 5%;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, rgba(129, 140, 248, 0.04) 45%, transparent 70%),
+    radial-gradient(circle at 30% 70%, rgba(34, 211, 238, 0.07), transparent 60%);
+  animation: aurora-b 20s ease-in-out infinite alternate;
 }
 
 @keyframes aurora-a {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(100px, 70px) scale(1.1); }
+  100% { transform: translate(120px, 80px) scale(1.15); }
 }
 
 @keyframes aurora-b {
   0% { transform: translate(0, 0) scale(1.05); }
-  100% { transform: translate(-110px, 50px) scale(0.92); }
+  100% { transform: translate(-140px, 60px) scale(0.9); }
 }
 
-/* ---------- Blueprint grid ---------- */
+/* ---------- Grid lines ---------- */
 .grid-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(to right, rgba(242, 243, 245, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(242, 243, 245, 0.045) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(245, 244, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 244, 240, 0.04) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 75%);
 }
 
-/* ---------- Spotlight + lift cards ---------- */
+/* ---------- Spotlight cards ---------- */
 .spotlight {
   position: relative;
   overflow: hidden;
@@ -193,7 +185,11 @@ a {
   inset: 0;
   opacity: 0;
   transition: opacity 0.35s ease;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.12), transparent 60%);
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(56, 189, 248, 0.1),
+    transparent 60%
+  );
   pointer-events: none;
 }
 
@@ -201,28 +197,30 @@ a {
   opacity: 1;
 }
 
+/* ---------- Card lift ---------- */
 .card-lift {
-  transition: transform 0.35s cubic-bezier(0.21, 0.47, 0.32, 0.98), border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.21, 0.47, 0.32, 0.98), border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .card-lift:hover {
   transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 18px 40px -18px rgba(99, 102, 241, 0.25), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 18px 46px -18px rgba(56, 189, 248, 0.18), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------- Primary button: solid, one hue ---------- */
+/* ---------- Glow button ---------- */
 .btn-glow {
-  background: var(--accent);
-  color: #ffffff;
-  box-shadow: 0 6px 22px -8px rgba(99, 102, 241, 0.55);
-  transition: background 0.25s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #05060b;
+  box-shadow: 0 6px 26px -8px rgba(56, 189, 248, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
 .btn-glow:hover {
-  background: var(--accent-2);
-  box-shadow: 0 10px 30px -8px rgba(99, 102, 241, 0.7);
-  transform: translateY(-2px);
+  box-shadow: 0 10px 36px -8px rgba(56, 189, 248, 0.65);
+  transform: translateY(-1px);
+  filter: brightness(1.06);
 }
 
 /* ---------- Pulsing availability dot ---------- */
@@ -231,7 +229,7 @@ a {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #34d399;
+  background: #4ade80;
 }
 
 .pulse-dot::after {
@@ -239,7 +237,7 @@ a {
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  background: rgba(52, 211, 153, 0.4);
+  background: rgba(74, 222, 128, 0.4);
   animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 

@@ -9,8 +9,8 @@ export default function ProjectCard({ project, delay = 0 }: { project: Project; 
     <Reveal delay={delay} className="h-full">
       <SpotlightCard className="h-full rounded-2xl border hairline bg-surface">
         <Link href={`/projects/${project.slug}`} className="group flex h-full flex-col p-6">
-          <div className="flex items-center justify-between gap-2">
-            <span className="label-mono rounded-full bg-accent-soft px-3 py-1.5 text-accent">
+          <div className="flex items-center justify-between">
+            <span className="rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-accent">
               {project.category}
             </span>
             {project.demoUrl ? (
@@ -27,13 +27,13 @@ export default function ProjectCard({ project, delay = 0 }: { project: Project; 
               </span>
             ) : null}
           </div>
-          <h3 className="font-display mt-4 text-xl font-semibold transition-colors group-hover:text-accent">
+          <h3 className="mt-4 text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
             {project.name}
           </h3>
           <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{project.oneLiner}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {project.stack.slice(0, 4).map((t) => (
-              <span key={t} className="rounded-md bg-surface-2 px-2 py-1 text-xs text-muted">
+              <span key={t} className="rounded-md bg-surface-2 px-2 py-1 text-xs text-faint">
                 {t}
               </span>
             ))}
