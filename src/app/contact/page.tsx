@@ -17,7 +17,7 @@ const channels = [
     label: "Email",
     value: site.email,
     href: `mailto:${site.email}`,
-    note: "Best for role and project inquiries, I reply quickly.",
+    note: "Best for roles and project inquiries. I reply quickly.",
   },
   {
     icon: LinkedinIcon,
@@ -40,8 +40,8 @@ export default function ContactPage() {
     <div className="mx-auto max-w-4xl px-6 py-24">
       <SectionHeading
         eyebrow="Contact"
-        title="Let's talk about what AI can do for your team"
-        description="Open to AI engineering roles in Saudi Arabia and the Gulf, remote positions, and consulting engagements: LLM applications, computer vision, and workflow automation."
+        title="Tell me what you're trying to build"
+        description="Open to AI engineering roles in Saudi Arabia and the Gulf, remote positions, and consulting work across LLM applications, computer vision, and workflow automation."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -68,8 +68,8 @@ export default function ContactPage() {
             <p className="flex items-center gap-2 text-sm text-faint">
               <MapPin size={14} className="text-accent" /> {site.location}, on-site, hybrid, or remote
             </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight">Want the full picture?</h3>
-            <p className="mt-1 text-sm text-muted">Download my CV, everything on this site, in one page.</p>
+            <h3 className="mt-2 text-xl font-semibold tracking-tight">Want it all in one place?</h3>
+            <p className="mt-1 text-sm text-muted">Everything on this site, condensed onto one page.</p>
           </div>
           <a
             href={resumeHref}

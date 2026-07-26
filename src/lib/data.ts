@@ -11,7 +11,7 @@ export const site = {
   github: "", // TODO: add GitHub profile URL
   url: "https://kareemkhalill.github.io/portfolio",
   tagline:
-    "I build production AI systems in Saudi Arabia: real-time computer vision and LLM-powered automation that turn manual work into seconds.",
+    "I build AI that runs in production, watching for risk in real time and turning hours of manual work into seconds.",
 };
 
 export type Metric = { value: string; label: string };
@@ -44,30 +44,30 @@ export const projects: Project[] = [
     featured: true,
     demoUrl: "https://clientflow-pro-demo.onrender.com",
     oneLiner:
-      "A bilingual (English/Arabic) self-hosted CRM, booking, quoting, and invoicing platform for service businesses, with an AI follow-up assistant, WhatsApp integration, a passwordless customer portal, and 222 automated tests.",
+      "A bilingual (English/Arabic) CRM, booking, quoting, and invoicing platform for service businesses, built to run on their own server with an AI follow-up assistant, WhatsApp delivery, and 222 automated tests behind it.",
     problem:
-      "Service businesses run their operation across disconnected tools: a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups in someone's head. Arabic-first businesses are doubly underserved: most affordable tools have no real RTL support. And subscription SaaS means their client data lives on someone else's servers.",
+      "Service businesses run their operation across tools that don't talk to each other: a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups tracked in someone's memory. Arabic-first businesses have it worse: most affordable software treats right-to-left layout as an afterthought. And subscription SaaS means the business's own client data lives on someone else's servers.",
     solution:
-      "I designed and built ClientFlow Pro end-to-end: one self-hosted platform covering the entire client lifecycle, from leads and pipeline to appointment booking with conflict prevention, quotes that convert to invoices with PDF export and token-secured public pages, payments tracking, tasks, support tickets, expenses, automations, and analytics. Fully localized in English and Arabic with true RTL layout. Optional AI (OpenAI/Anthropic) drafts follow-up messages from each client's history, and WhatsApp integration (Meta Cloud API) delivers bookings, quotes, and invoices where clients actually are, both dormant until the owner adds their own keys.",
+      "I designed and built ClientFlow Pro end-to-end: a single self-hosted platform covering the whole client lifecycle, from leads and pipeline through appointment booking with conflict prevention, to quotes that convert into invoices with PDF export and token-secured public pages, payments, tasks, support tickets, expenses, automations, and analytics. Every screen works in English and Arabic with genuine right-to-left layout, not a translated skin. An optional AI layer (OpenAI or Anthropic) drafts follow-up messages from a client's history, and a WhatsApp integration delivers bookings, quotes, and invoices straight to the client's phone. Both stay dormant until the business owner supplies their own API keys.",
     architecture: [
-      { step: "Laravel 12 Monolith", detail: "PHP 8.4, Blade + Livewire 3 + Alpine.js reactive UI, Tailwind CSS, deployable on ordinary shared hosting via a self-locking browser install wizard." },
-      { step: "Roles & Permissions", detail: "Owner / Manager / Staff / Accountant with staff-scoped data visibility (Spatie Permission), plus an opt-in audit log of who changed what." },
-      { step: "Booking Engine", detail: "Staff availability, unavailable-date exceptions, double-booking prevention, drag-to-reschedule time-grid calendar, and a rate-limited public booking page." },
-      { step: "Quotes → Invoices Lifecycle", detail: "Line items, proposal sections, PDF export, email delivery, typed-signature acceptance on token-gated public pages, one-click conversion, payment tracking with automatic status rollup." },
-      { step: "Integrations Layer", detail: "WhatsApp (Meta Cloud API), AI follow-up drafting (OpenAI/Anthropic), SMTP: all off by default, secrets encrypted, failures logged without breaking the triggering flow." },
-      { step: "Extensibility & Ops", detail: "Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, system-health dashboard, verified by 222 PHPUnit tests." },
+      { step: "Laravel 12 Monolith", detail: "PHP 8.4, Blade with Livewire 3 and Alpine.js for the reactive UI, Tailwind CSS throughout, deployable on ordinary shared hosting via a self-locking browser install wizard." },
+      { step: "Roles & Permissions", detail: "Owner, Manager, Staff, and Accountant roles with staff-scoped data visibility (Spatie Permission), plus an opt-in audit log of who changed what and when." },
+      { step: "Booking Engine", detail: "Staff availability, unavailable-date exceptions, double-booking prevention, a drag-to-reschedule time-grid calendar, and a rate-limited public booking page." },
+      { step: "Quotes to Invoices Lifecycle", detail: "Line items, proposal sections, PDF export, email delivery, typed-signature acceptance on token-gated public pages, one-click conversion, and payment tracking with automatic status rollup." },
+      { step: "Integrations Layer", detail: "WhatsApp via Meta's Cloud API, AI follow-up drafting through OpenAI or Anthropic, and SMTP, all off by default, secrets encrypted, failures logged without breaking the flow that triggered them." },
+      { step: "Extensibility & Ops", detail: "A Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, and a system-health dashboard, all verified by 222 PHPUnit tests." },
     ],
     challenges: [
-      "True bilingual product: every screen works in English and Arabic with real RTL layout, not a bolted-on translation.",
-      "A passwordless customer portal: signed, time-limited magic links give clients access to appointments, quotes, invoices, and documents with no password to leak.",
-      "Integrations that fail safely: WhatsApp/AI/email calls are real HTTP integrations, but a send failure can never break the booking or invoice flow that triggered it.",
-      "Shipping as a product, not a project: install wizard, buyer docs, demo seed data, packaging, and license activation for marketplace distribution.",
+      "Building a genuinely bilingual product: every screen works in English and Arabic with real right-to-left layout, not a bolted-on translation.",
+      "Designing a passwordless customer portal where signed, time-limited magic links give clients access to appointments, quotes, invoices, and documents with nothing to leak.",
+      "Making third-party integrations fail safely: WhatsApp, AI, and email calls are real HTTP integrations, but a failed send can never break the booking or invoice flow that triggered it.",
+      "Shipping it as a product rather than a project: an install wizard, buyer documentation, demo seed data, packaging, and license activation built for marketplace distribution.",
     ],
     impact: [
       "Replaces four or five separate SaaS subscriptions with one self-hosted install the business owns outright.",
-      "AI-drafted follow-ups turn each client's pipeline status and history into a ready-to-review message, in the business's language.",
-      "WhatsApp delivery meets clients on the channel Gulf businesses actually use.",
-      "222 automated tests across every module make it safe to extend: engineering discipline most portfolio projects never show.",
+      "Turns each client's pipeline status and history into a ready-to-review follow-up message, drafted in the business's own language.",
+      "Delivers bookings, quotes, and invoices over WhatsApp, the channel Gulf businesses actually use.",
+      "222 automated tests across every module make the codebase safe to extend, the kind of engineering discipline most portfolio projects skip.",
     ],
     metrics: [
       { value: "222", label: "automated tests (PHPUnit)" },
@@ -83,26 +83,26 @@ export const projects: Project[] = [
     category: "LLM & Automation",
     featured: true,
     oneLiner:
-      "An LLM-powered assistant that lets teams request operational reports in plain language over WhatsApp, and receive them in seconds instead of waiting on manual compilation.",
+      "An LLM-powered assistant that turns a plain-language WhatsApp message into a delivered report in seconds, no dashboard login, no waiting on an analyst.",
     problem:
-      "Operational teams depend on recurring reports, but producing and distributing them is manual, repetitive work. Requests queue up, analysts context-switch, and decision-makers wait hours for data they need immediately, often while away from a desk.",
+      "Operational teams depend on recurring reports, but producing and distributing them is manual, repetitive work. Requests queue up, analysts get pulled off other work to compile them, and decision-makers wait hours for numbers they need right now, often while they're away from a desk entirely.",
     solution:
-      "I built an AI assistant that meets people where they already are: WhatsApp. Users send a plain-language request; an LLM interprets the intent, the automation layer generates the report, and the result is delivered back in the same chat. Built with OpenClaw and Replit with LLM capabilities integrated end-to-end.",
+      "I built an AI assistant that meets people where they already are: WhatsApp. A user sends a plain-language request, an LLM interprets the intent, an automation layer generates the report, and the result lands back in the same chat thread. Built with OpenClaw and Replit, with LLM reasoning wired in end to end.",
     architecture: [
       { step: "WhatsApp Gateway", detail: "Inbound messages are received and routed to the assistant." },
-      { step: "LLM Intent Layer", detail: "A large language model interprets the request: what report, what scope, what format." },
-      { step: "Automation Engine", detail: "OpenClaw workflows generate the requested report from operational data." },
-      { step: "Delivery", detail: "The finished report is returned to the requester directly in WhatsApp." },
+      { step: "LLM Intent Layer", detail: "A large language model interprets the request: which report, what scope, what format." },
+      { step: "Automation Engine", detail: "OpenClaw workflows generate the requested report from live operational data." },
+      { step: "Delivery", detail: "The finished report lands back with the requester, directly inside WhatsApp." },
     ],
     challenges: [
-      "Interpreting loosely-worded, real-world requests reliably enough to trigger the right workflow.",
-      "Keeping the round trip fast enough to feel conversational rather than like a ticket queue.",
-      "Making the system dependable enough that teams trust it over the manual process.",
+      "Interpreting loosely worded, real-world requests reliably enough to trigger the correct workflow every time.",
+      "Keeping the round trip fast enough to feel like a conversation, not a support ticket.",
+      "Earning enough trust that teams choose the assistant over the manual process out of habit.",
     ],
     impact: [
-      "Removes the manual report-generation loop entirely for supported reports.",
-      "Gives non-technical stakeholders self-service access to operational data through a familiar interface.",
-      "Frees analyst time for higher-value work instead of repetitive compilation.",
+      "Removes the manual report-generation loop entirely for every supported report type.",
+      "Gives non-technical stakeholders self-service access to operational data through an interface they already use daily.",
+      "Frees analyst time for work that actually needs a person, instead of repetitive compilation.",
     ],
     metrics: [
       { value: "Seconds", label: "from request to delivered report" },
@@ -119,25 +119,25 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "Real-time in-cabin AI that detects driver fatigue and distraction before they become accidents.",
+      "Real-time in-cabin AI that catches driver fatigue and distraction before they turn into an accident, not after.",
     problem:
-      "Driver fatigue and distraction are leading causes of road accidents, and fleets have no visibility into driver state until after an incident. Human supervision doesn't scale to every vehicle, every minute.",
+      "Driver fatigue and distraction rank among the leading causes of road accidents, yet fleets have no visibility into a driver's state until after something has already gone wrong. Human supervision simply doesn't scale to every vehicle, every minute of every shift.",
     solution:
-      "I developed a real-time monitoring system that combines CNNs with facial landmark tracking to continuously read the driver's state, including eye closure, head pose, and attention, and flag fatigue or distraction the moment it appears. The pipeline is multi-threaded and optimized for continuous on-device processing.",
+      "I built a real-time monitoring system that pairs CNNs with facial landmark tracking to read a driver's state continuously: eye closure, head pose, attention, and flags fatigue or distraction the moment it appears. The pipeline runs multi-threaded and is tuned for continuous on-device processing.",
     architecture: [
-      { step: "Video Capture", detail: "Continuous in-cabin camera stream." },
-      { step: "Face & Landmark Detection", detail: "Dlib facial landmark tracking locates eyes, mouth, and head pose per frame." },
-      { step: "CNN State Classifier", detail: "A convolutional network classifies fatigue and distraction signals." },
-      { step: "Multi-threaded Inference", detail: "Parallelized processing keeps detection real-time on continuous video." },
-      { step: "Alerting", detail: "Inattention events trigger immediate alerts." },
+      { step: "Video Capture", detail: "A continuous in-cabin camera stream feeds the pipeline." },
+      { step: "Face & Landmark Detection", detail: "Dlib facial landmark tracking locates eyes, mouth, and head pose on every frame." },
+      { step: "CNN State Classifier", detail: "A convolutional network classifies fatigue and distraction signals frame by frame." },
+      { step: "Multi-threaded Inference", detail: "Parallelized processing keeps detection real time on continuous video." },
+      { step: "Alerting", detail: "Inattention events trigger an alert the instant they're detected." },
     ],
     challenges: [
       "Sustaining real-time performance on a continuous video stream, solved with a multi-threaded inference pipeline.",
-      "Distinguishing genuine fatigue signals (sustained eye closure, head droop) from normal blinking and glances.",
+      "Telling genuine fatigue signals (sustained eye closure, head droop) apart from ordinary blinking and glancing away.",
     ],
     impact: [
-      "Enables proactive safety intervention instead of post-incident review.",
-      "Scales driver supervision across a fleet without added headcount.",
+      "Turns safety response from reactive post-incident review into proactive intervention.",
+      "Scales driver supervision across an entire fleet without adding headcount.",
     ],
     metrics: [
       { value: "~20%", label: "faster detection responsiveness after optimization" },
@@ -153,25 +153,25 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "YOLOv8-based monitoring that automatically verifies protective-equipment compliance on industrial sites, cutting manual monitoring by ~30%.",
+      "YOLOv8 monitoring that checks protective-equipment compliance on industrial sites automatically, cutting manual monitoring by roughly 30%.",
     problem:
-      "Industrial sites are required to enforce PPE compliance (helmets, vests, protective gear), but enforcement relies on safety officers physically watching workers or reviewing footage: slow, expensive, and full of blind spots.",
+      "Industrial sites are required to enforce PPE compliance, helmets, vests, protective gear, but enforcement usually falls on safety officers physically watching workers or scrubbing through footage after the fact. That's slow, expensive, and leaves plenty of blind spots.",
     solution:
-      "I implemented YOLOv8 object-detection models trained and validated on custom datasets to monitor PPE compliance directly from site cameras. The system continuously checks live video for missing protective equipment and surfaces violations as they happen.",
+      "I implemented YOLOv8 object-detection models, trained and validated on custom datasets, to monitor PPE compliance directly from site cameras. The system checks live video continuously for missing protective equipment and surfaces violations the moment they happen.",
     architecture: [
-      { step: "Site Camera Streams", detail: "Live video from industrial environments." },
-      { step: "YOLOv8 Detection", detail: "Custom-trained models detect workers and individual PPE items per frame." },
-      { step: "Compliance Logic", detail: "Person-equipment association determines who is and isn't compliant." },
+      { step: "Site Camera Streams", detail: "Live video feeds from across the industrial environment." },
+      { step: "YOLOv8 Detection", detail: "Custom-trained models detect workers and individual PPE items in every frame." },
+      { step: "Compliance Logic", detail: "Person-to-equipment association determines who is and isn't compliant." },
       { step: "Violation Alerts", detail: "Non-compliance events are flagged for safety teams in real time." },
     ],
     challenges: [
-      "Building and labeling custom datasets that reflect real site conditions: angles, occlusion, lighting.",
-      "Validating model performance rigorously enough to trust it as a compliance signal.",
+      "Building and labeling custom datasets that reflect real site conditions: awkward angles, occlusion, and inconsistent lighting.",
+      "Validating model performance rigorously enough that it can be trusted as a genuine compliance signal.",
     ],
     impact: [
-      "Reduced manual monitoring workload by approximately 30%.",
-      "Turns PPE enforcement from spot-checks into continuous, camera-wide coverage.",
-      "Creates an auditable safety-compliance record for site management.",
+      "Cut manual monitoring workload by roughly 30%.",
+      "Turned PPE enforcement from occasional spot-checks into continuous, camera-wide coverage.",
+      "Creates an auditable safety-compliance record site management can actually rely on.",
     ],
     metrics: [
       { value: "~30%", label: "reduction in manual monitoring" },
@@ -188,24 +188,24 @@ export const projects: Project[] = [
     category: "Computer Vision",
     featured: true,
     oneLiner:
-      "An AI security layer for factory surveillance that detects intrusions into restricted zones and alerts in real time, improving response time by ~25%.",
+      "An AI security layer for factory surveillance that catches intrusions into restricted zones and alerts in real time, cutting response time by roughly 25%.",
     problem:
-      "Factories and secure facilities rely on guards watching camera walls to catch intrusions into restricted areas. Attention fades, incidents get missed, and response starts only after someone happens to notice.",
+      "Factories and secure facilities rely on guards watching walls of camera feeds to catch intrusions into restricted areas. Attention fades over a long shift, incidents slip through, and response only starts once someone happens to notice.",
     solution:
-      "I developed an AI security system combining YOLOv8 object detection with motion analysis to watch restricted zones continuously. When a person enters a protected area, the system generates an immediate alert with visual overlays showing exactly where and what was detected.",
+      "I built an AI security system that fuses YOLOv8 object detection with motion analysis to watch restricted zones around the clock. The moment a person enters a protected area, the system fires an immediate alert with visual overlays showing exactly where and what was detected.",
     architecture: [
-      { step: "Surveillance Feeds", detail: "Live camera streams covering restricted zones." },
-      { step: "Detection + Motion Analysis", detail: "YOLOv8 detection fused with motion analysis to identify genuine intrusions." },
-      { step: "Zone Logic", detail: "Configurable restricted-area boundaries evaluated per frame." },
-      { step: "Real-time Alerts", detail: "Flask-served alerts with visual overlays for security teams." },
+      { step: "Surveillance Feeds", detail: "Live camera streams covering every restricted zone." },
+      { step: "Detection + Motion Analysis", detail: "YOLOv8 detection fused with motion analysis to confirm genuine intrusions and filter out noise." },
+      { step: "Zone Logic", detail: "Configurable restricted-area boundaries evaluated on every frame." },
+      { step: "Real-time Alerts", detail: "Flask-served alerts with visual overlays reach security teams instantly." },
     ],
     challenges: [
-      "Suppressing false triggers from motion that isn't an intrusion (shadows, machinery, authorized paths).",
-      "Rendering alert overlays fast enough that security teams see incidents as they unfold.",
+      "Suppressing false triggers from motion that isn't an intrusion: shadows, machinery, authorized foot traffic.",
+      "Rendering alert overlays fast enough that security teams see incidents as they're still unfolding.",
     ],
     impact: [
-      "Improved incident response time by approximately 25%.",
-      "Converts passive camera coverage into an active, always-on security layer.",
+      "Cut incident response time by roughly 25%.",
+      "Converted passive camera coverage into an active, always-on security layer.",
     ],
     metrics: [
       { value: "~25%", label: "faster incident response" },
@@ -220,24 +220,24 @@ export const projects: Project[] = [
     shortName: "People Counting",
     category: "Computer Vision",
     oneLiner:
-      "Computer-vision system that detects and counts people inside restricted areas, giving operations teams live occupancy awareness.",
+      "A computer vision system that detects and counts people inside restricted areas, giving operations teams live occupancy awareness instead of guesswork.",
     problem:
-      "Knowing how many people are inside a restricted or capacity-limited area matters for safety, security, and compliance, but manual headcounts are unreliable and impossible to maintain continuously.",
+      "Knowing exactly how many people are inside a restricted or capacity-limited area matters for safety, security, and compliance, but manual headcounts are unreliable and impossible to keep up continuously.",
     solution:
-      "I built a detection-and-counting system that identifies people in restricted zones from live video and maintains an accurate count over time, giving operators continuous occupancy visibility without manual checks.",
+      "I built a detection-and-counting system that identifies people in restricted zones from live video and maintains an accurate running count, giving operators continuous occupancy visibility without a single manual check.",
     architecture: [
       { step: "Camera Streams", detail: "Live video covering the monitored area." },
-      { step: "Person Detection", detail: "Object-detection models locate every person per frame." },
-      { step: "Counting Logic", detail: "Zone-aware counting maintains a live occupancy figure." },
-      { step: "Operator View", detail: "Counts and detections rendered as live visual overlays." },
+      { step: "Person Detection", detail: "Object-detection models locate every person in every frame." },
+      { step: "Counting Logic", detail: "Zone-aware counting maintains a live, accurate occupancy figure." },
+      { step: "Operator View", detail: "Counts and detections render as live visual overlays for operators." },
     ],
     challenges: [
-      "Keeping counts stable when people overlap, enter, and exit the frame.",
-      "Defining zone boundaries that match real operational areas.",
+      "Keeping counts stable as people overlap, enter, and exit the frame in quick succession.",
+      "Defining zone boundaries that actually match the real operational areas on the ground.",
     ],
     impact: [
-      "Continuous occupancy awareness for safety and capacity compliance.",
-      "Removes the need for manual headcounts in monitored zones.",
+      "Gives safety and capacity compliance continuous occupancy awareness, not a snapshot.",
+      "Removes the need for manual headcounts in monitored zones entirely.",
     ],
     metrics: [
       { value: "Live", label: "occupancy counting" },
@@ -252,24 +252,24 @@ export const projects: Project[] = [
     shortName: "Activity Detection",
     category: "Computer Vision",
     oneLiner:
-      "Activity-recognition models built on temporal video for elderly safety and posture monitoring, with real-time inference for continuous alerting.",
+      "Activity-recognition models built on temporal video for elderly safety and posture monitoring, running real-time inference for continuous alerting.",
     problem:
-      "Elderly individuals living or being cared for alone face risks such as falls, abnormal posture, and inactivity that go unnoticed without constant human observation, which is impractical and intrusive.",
+      "Elderly individuals living or cared for alone face risks like falls, abnormal posture, and prolonged inactivity that go unnoticed without constant human observation, which is both impractical and intrusive to provide.",
     solution:
-      "I built activity-recognition models using transfer learning on temporal video data to understand what a person is doing over time, not just in a single frame. The system runs real-time inference suitable for continuous surveillance and triggers alerts on safety-relevant activity patterns.",
+      "I built activity-recognition models using transfer learning on temporal video data to understand what a person is doing over time, not just what a single frame shows. The system runs real-time inference suitable for continuous surveillance and triggers alerts on safety-relevant activity patterns.",
     architecture: [
-      { step: "Temporal Video Input", detail: "Sequences of frames capture movement over time." },
-      { step: "Transfer-Learning Backbone", detail: "Pretrained networks fine-tuned for activity classes." },
-      { step: "Activity Classification", detail: "TensorFlow/Keras models recognize posture and activity patterns." },
-      { step: "Continuous Alerting", detail: "Real-time inference feeds an alerting loop for caregivers." },
+      { step: "Temporal Video Input", detail: "Sequences of frames capture movement as it unfolds over time." },
+      { step: "Transfer-Learning Backbone", detail: "Pretrained networks fine-tuned specifically for activity classes." },
+      { step: "Activity Classification", detail: "TensorFlow and Keras models recognize posture and activity patterns." },
+      { step: "Continuous Alerting", detail: "Real-time inference feeds a live alerting loop for caregivers." },
     ],
     challenges: [
-      "Modeling activities across time rather than single frames, since motion context is the signal.",
-      "Achieving real-time inference speeds compatible with continuous monitoring.",
+      "Modeling activity across time rather than single frames, since motion context carries the actual signal.",
+      "Hitting real-time inference speeds compatible with genuinely continuous monitoring.",
     ],
     impact: [
-      "Enables non-intrusive, continuous safety monitoring for vulnerable individuals.",
-      "Alerts caregivers to posture and activity anomalies without requiring constant observation.",
+      "Delivers non-intrusive, continuous safety monitoring for people who need it but shouldn't feel watched.",
+      "Alerts caregivers to posture and activity anomalies without requiring constant manual observation.",
     ],
     metrics: [
       { value: "Real-time", label: "continuous inference" },
@@ -284,24 +284,24 @@ export const projects: Project[] = [
     shortName: "Fire & Smoke Detection",
     category: "Computer Vision",
     oneLiner:
-      "A CNN-based early-warning classifier that spots fire and smoke across varied environments, optimized for low-latency smart-surveillance deployment.",
+      "A CNN-based early-warning classifier that spots fire and smoke across varied environments, tuned for low-latency deployment on live surveillance feeds.",
     problem:
-      "Conventional fire detection reacts to heat and smoke reaching a physical sensor, by which time a fire is established. Cameras see fire far earlier, but only if something is watching them intelligently.",
+      "Conventional fire detection reacts only once heat or smoke physically reaches a sensor, by which point the fire is already established. Cameras can see fire far earlier than that, but only if something is watching them intelligently.",
     solution:
-      "I engineered a CNN-based classifier that detects fire and smoke visually across varied environments and lighting conditions, and optimized it for low-latency deployment inside smart surveillance pipelines, turning existing cameras into early-warning fire sensors.",
+      "I engineered a CNN-based classifier that visually detects fire and smoke across varied environments and lighting conditions, then optimized it for low-latency deployment inside smart surveillance pipelines, turning cameras already on site into early-warning fire sensors.",
     architecture: [
-      { step: "Surveillance Input", detail: "Frames from existing camera infrastructure." },
-      { step: "CNN Classifier", detail: "TensorFlow/Keras network trained to recognize fire and smoke signatures." },
-      { step: "Low-latency Pipeline", detail: "Optimized inference path for early-warning speed." },
-      { step: "Alert Output", detail: "Detections feed surveillance alerting systems." },
+      { step: "Surveillance Input", detail: "Frames pulled from existing camera infrastructure, no new hardware required." },
+      { step: "CNN Classifier", detail: "A TensorFlow/Keras network trained to recognize fire and smoke signatures." },
+      { step: "Low-latency Pipeline", detail: "An inference path optimized specifically for early-warning speed." },
+      { step: "Alert Output", detail: "Detections feed directly into existing surveillance alerting systems." },
     ],
     challenges: [
-      "Generalizing across environments (indoor, outdoor, day, night) without false alarms from fire-like visuals.",
-      "Squeezing inference latency low enough for genuine early warning.",
+      "Generalizing across environments (indoor, outdoor, day, night) without triggering false alarms on fire-like visuals.",
+      "Squeezing inference latency down far enough to deliver a genuine early warning.",
     ],
     impact: [
-      "Earlier fire detection than sensor-based systems, using cameras already in place.",
-      "Low-latency design fits real surveillance deployments, not just lab conditions.",
+      "Detects fire earlier than sensor-based systems, using cameras that are already in place.",
+      "A low-latency design that fits real surveillance deployments, not just lab conditions.",
     ],
     metrics: [
       { value: "Early", label: "visual detection before sensor triggers" },
@@ -330,8 +330,8 @@ export const experience: Experience[] = [
     mode: "On-site",
     bullets: [
       "Build AI applications and automated workflows using Python, Replit, OpenClaw, and LLM technologies.",
-      "Manage platform operations, ensuring data accuracy and system reliability for a Royal Commission platform.",
-      "Validate dashboards and reports to guarantee data quality and consistency for decision-makers.",
+      "Manage platform operations, keeping data accurate and systems reliable for a Royal Commission platform.",
+      "Validate dashboards and reports so decision-makers can trust the data behind every call they make.",
       "Work directly with stakeholders to gather requirements and improve business processes.",
     ],
   },
@@ -343,7 +343,7 @@ export const experience: Experience[] = [
     mode: "Remote",
     bullets: [
       "Delivered production-ready computer vision and geospatial AI models, cutting manual analysis time and enabling real-time internal decision-making.",
-      "Developed an oil spill detection solution using deep learning and satellite/aerial imagery to support environmental monitoring and rapid incident detection.",
+      "Developed an oil spill detection solution using deep learning and satellite and aerial imagery for environmental monitoring and rapid incident detection.",
       "Built NDVI (Normalized Difference Vegetation Index) analysis workflows to assess crop health, vegetation stress, and agricultural conditions from remote sensing data.",
     ],
   },
@@ -355,8 +355,8 @@ export const experience: Experience[] = [
     mode: "Remote",
     bullets: [
       "Developed and deployed computer-vision models for real-time video monitoring, containerized with Docker for production.",
-      "Implemented YOLO-based object-detection pipelines for live streams, reducing false alerts by ~20%.",
-      "Integrated AI models into internal systems alongside software engineers for continuous real-time inference.",
+      "Implemented YOLO-based object-detection pipelines for live streams, cutting false alerts by roughly 20%.",
+      "Integrated AI models into internal systems alongside software engineers to keep real-time inference stable in production.",
     ],
   },
 ];
@@ -365,7 +365,7 @@ export const capabilities = [
   {
     title: "LLM Applications & AI Agents",
     description:
-      "Assistants and agents that automate real workflows, from report generation to data access and operational tasks, built with LLM integrations, OpenClaw, and Python.",
+      "Assistants and agents that automate real workflows, from report generation to data access to operational tasks, built with LLM integrations, OpenClaw, and Python.",
   },
   {
     title: "Computer Vision Systems",
@@ -375,22 +375,22 @@ export const capabilities = [
   {
     title: "AI-Powered APIs",
     description:
-      "FastAPI services that expose real-time model inference to internal systems: tested, validated, and containerized with Docker.",
+      "FastAPI services that put real-time model inference in front of internal systems, tested, validated, and containerized with Docker.",
   },
   {
     title: "WhatsApp AI Solutions",
     description:
-      "AI delivered where teams already work: conversational assistants that take requests and return results inside WhatsApp.",
+      "AI delivered where teams already work: conversational assistants that take a request and hand back results inside WhatsApp.",
   },
   {
     title: "Workflow Automation",
     description:
-      "Automation that removes repetitive manual work, from report compilation to data validation, using Python and LLM-driven workflows.",
+      "Automation that strips out repetitive manual work, from report compilation to data validation, using Python and LLM-driven workflows.",
   },
   {
     title: "Data & BI Reliability",
     description:
-      "Dashboard validation, data quality assurance, and business-process improvement that make analytics trustworthy for decision-makers.",
+      "Dashboard validation, data quality assurance, and business-process improvement that make analytics something decision-makers can actually trust.",
   },
 ];
 

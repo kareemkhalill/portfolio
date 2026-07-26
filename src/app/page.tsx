@@ -78,8 +78,8 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <SectionHeading
             eyebrow="What I build"
-            title="AI that solves business problems, end to end"
-            description="From the model to the API to the workflow around it, systems designed to remove manual work, reduce risk, and put answers in front of the people who need them."
+            title="AI that solves the problem, not just the demo"
+            description="From the model to the API to the workflow wrapped around it, every system here is designed to cut manual work, reduce risk, and put the right answer in front of the person who needs it."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c, i) => (
@@ -99,8 +99,8 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <SectionHeading
             eyebrow="Selected work"
-            title="Case studies with real demos"
-            description="Every system below shipped. Most include recorded demos of the software running, not mockups."
+            title="Systems that shipped, not slides that pitched"
+            description="Every project below is running or has run in production. Most come with a live demo or recorded footage of the actual software, not a mockup."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {featured.map((p, i) => (
@@ -121,7 +121,7 @@ export default function Home() {
       {/* Experience */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHeading title="Where I've shipped" />
+          <SectionHeading title="Built where it counts" />
           <div className="mt-12 space-y-px overflow-hidden rounded-2xl border hairline bg-borderc">
             {experience.map((e, i) => (
               <Reveal key={e.company} delay={i * 0.05}>
@@ -154,10 +154,10 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-6 py-24 text-center">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Hiring for AI in <span className="text-gradient">Saudi Arabia</span> or the Gulf?
+              Building AI teams in <span className="text-gradient">Saudi Arabia</span> or the Gulf?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted">
-              I&apos;m open to AI engineering roles and consulting engagements: LLM applications, computer vision, and automation that ships.
+              I&apos;m open to AI engineering roles and consulting work: LLM applications, computer vision, and automation built to actually ship.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="btn-glow rounded-full px-6 py-3 text-sm font-medium">
