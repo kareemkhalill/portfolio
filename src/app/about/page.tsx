@@ -25,7 +25,7 @@ export default function AboutPage() {
           <p>
             <span className="text-foreground">Now:</span> LLM assistants and automation that do real work,
             like a WhatsApp bot that returns a report in seconds. Plus{" "}
-            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product with 222 tests.
+            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product.
           </p>
           <p>
             <span className="text-foreground">Before:</span> computer vision in production. PPE compliance,

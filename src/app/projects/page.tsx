@@ -22,7 +22,7 @@ export default function ProjectsPage() {
       />
 
       <h2 className="mt-16 text-lg font-semibold text-foreground">Flagship product</h2>
-      <div className="mt-6 grid gap-6">
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
         {product.map((p, i) => (
           <ProjectCard key={p.slug} project={p} delay={i * 0.05} />
         ))}

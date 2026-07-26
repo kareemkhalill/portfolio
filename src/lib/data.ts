@@ -43,7 +43,7 @@ export const projects: Project[] = [
     featured: true,
     demoUrl: "https://clientflow-pro-demo.onrender.com",
     oneLiner:
-      "Bilingual CRM, booking, and invoicing platform. Self-hosted, AI follow-ups, 222 tests.",
+      "Bilingual CRM, booking, and invoicing platform. Self-hosted, with AI follow-ups and WhatsApp delivery.",
     problem:
       "Service businesses run their operation across tools that don't talk to each other: a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups tracked in someone's memory. Arabic-first businesses have it worse: most affordable software treats right-to-left layout as an afterthought. And subscription SaaS means the business's own client data lives on someone else's servers.",
     solution:
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       { step: "Booking Engine", detail: "Staff availability, unavailable-date exceptions, double-booking prevention, a drag-to-reschedule time-grid calendar, and a rate-limited public booking page." },
       { step: "Quotes to Invoices Lifecycle", detail: "Line items, proposal sections, PDF export, email delivery, typed-signature acceptance on token-gated public pages, one-click conversion, and payment tracking with automatic status rollup." },
       { step: "Integrations Layer", detail: "WhatsApp via Meta's Cloud API, AI follow-up drafting through OpenAI or Anthropic, and SMTP, all off by default, secrets encrypted, failures logged without breaking the flow that triggered them." },
-      { step: "Extensibility & Ops", detail: "A Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, and a system-health dashboard, all verified by 222 PHPUnit tests." },
+      { step: "Extensibility & Ops", detail: "A Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, and a system-health dashboard, all covered by an automated PHPUnit suite." },
     ],
     challenges: [
       "Building a genuinely bilingual product: every screen works in English and Arabic with real right-to-left layout, not a bolted-on translation.",
@@ -66,10 +66,10 @@ export const projects: Project[] = [
       "Replaces four or five separate SaaS subscriptions with one self-hosted install the business owns outright.",
       "Turns each client's pipeline status and history into a ready-to-review follow-up message, drafted in the business's own language.",
       "Delivers bookings, quotes, and invoices over WhatsApp, the channel Gulf businesses actually use.",
-      "222 automated tests across every module make the codebase safe to extend, the kind of engineering discipline most portfolio projects skip.",
+      "An automated test suite across every module keeps the codebase safe to extend.",
     ],
     metrics: [
-      { value: "222", label: "automated tests (PHPUnit)" },
+      { value: "Tested", label: "automated PHPUnit suite" },
       { value: "EN + AR", label: "full bilingual with true RTL" },
       { value: "v1.1", label: "packaged, documented release" },
     ],
