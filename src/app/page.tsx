@@ -3,9 +3,11 @@ import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { site, projects, capabilities, experience, resumeHref } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import ProjectShowreel from "@/components/ProjectShowreel";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
+  const featured = projects.filter((p) => p.featured);
+
   return (
     <>
       {/* Hero */}
@@ -100,19 +102,21 @@ export default function Home() {
           <SectionHeading
             eyebrow="02 — Selected work"
             title="Case studies with real demos"
-            description="Every system below shipped. Most include a live demo or recorded footage of the software running — not mockups. Hover a title to preview it."
+            description="Every system below shipped. Most include a live demo or recorded footage of the software running — not mockups."
           />
-        </div>
-        <Reveal delay={0.15}>
-          <ProjectShowreel projects={projects} />
-        </Reveal>
-        <div className="mx-auto max-w-6xl px-6 pb-24">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {featured.map((p, i) => (
+              <div key={p.slug} className={i === 0 ? "md:col-span-2" : undefined}>
+                <ProjectCard project={p} delay={i * 0.05} />
+              </div>
+            ))}
+          </div>
           <Reveal delay={0.2}>
             <Link
               href="/projects"
               className="link-underline mt-10 inline-flex items-center gap-2 text-sm font-medium text-accent"
             >
-              Browse by category <ArrowRight size={16} />
+              View all {projects.length} projects <ArrowRight size={16} />
             </Link>
           </Reveal>
         </div>
