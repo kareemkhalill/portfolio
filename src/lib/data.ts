@@ -117,6 +117,7 @@ export const projects: Project[] = [
     shortName: "Email Assistant",
     category: "LLM & Automation",
     featured: true,
+    driveVideoId: "1OnAOucNE3fd7dJo-ijxX2jEEITO-SR1n",
     oneLiner:
       "Every new email arrives on WhatsApp. Reply there, get an LLM-drafted response, and send it from the mailbox.",
     problem:
