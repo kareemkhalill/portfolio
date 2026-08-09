@@ -112,6 +112,45 @@ export const projects: Project[] = [
     simulated: true,
   },
   {
+    slug: "whatsapp-email-assistant",
+    name: "WhatsApp Email Assistant",
+    shortName: "Email Assistant",
+    category: "LLM & Automation",
+    featured: true,
+    oneLiner:
+      "Every new email arrives on WhatsApp. Reply there, get an LLM-drafted response, and send it from the mailbox.",
+    problem:
+      "A manager's inbox is a decision center they can't leave behind: requests, approvals, and client replies pile up, but the mailbox only lives on the desk. Checking email means opening the laptop, drafting each reply from scratch, and juggling tone and wording for every one. On the move, the mailbox effectively stops working — until the manager is back at the desk and the messages have gone cold.",
+    solution:
+      "I built a mailbox-to-WhatsApp assistant that moves the inbox to the channel the manager already answers from. New mail is detected the moment it lands and delivered to WhatsApp with the full body; the manager replies in plain language, an LLM drafts a professional response with a confidence score, and one tap approves and sends it back through the real mailbox. Voice notes are transcribed and treated as instructions, so replies can be dictated while driving. The whole conversation runs as a strict state machine, and every message flows through a durable, retried pipeline so nothing gets lost.",
+    architecture: [
+      { step: "Mailbox Ingestion", detail: "Microsoft 365 Graph change notifications plus delta polling detect new mail as it lands." },
+      { step: "WhatsApp Gateway", detail: "A Baileys gateway pairs the manager's number and delivers each email as a WhatsApp message." },
+      { step: "Conversation FSM", detail: "A strict state machine routes every inbound message: Reply, Edit Draft, Add CC, Send, Cancel." },
+      { step: "LLM Drafting", detail: "An LLM (Ollama qwen2.5) drafts a professional reply from the email thread, with a confidence score." },
+      { step: "Voice Input", detail: "faster-whisper transcribes voice notes into the same instruction path as typed text." },
+      { step: "Durable Outbox", detail: "Postgres-backed queue with retries and encrypted-at-rest WhatsApp credentials keep delivery reliable." },
+    ],
+    challenges: [
+      "Keeping a free-form chat thread reliable: the conversation is a strict FSM so a natural back-and-forth can never drift into an ambiguous state.",
+      "Pairing WhatsApp so credentials survive restarts: encrypted at rest, re-pair via QR when needed.",
+      "Making the voice path a real input: a voice note must be transcribed and treated as an instruction, not a second-class feature.",
+      "Guaranteeing delivery: every email, draft, and send flows through a durable, retried pipeline so nothing is dropped.",
+    ],
+    impact: [
+      "Turns the mailbox into something that works from anywhere, answered on the channel the manager already uses.",
+      "Every reply is drafted professionally by an LLM and human-approved before it leaves the mailbox.",
+      "Attachments arrive on WhatsApp as files, so nothing requires a laptop to be seen.",
+      "An automated suite of 90 tests keeps the FSM and delivery pipeline safe to extend.",
+    ],
+    metrics: [
+      { value: "90", label: "automated unit & integration tests" },
+      { value: "Strict", label: "conversation FSM" },
+      { value: "Voice", label: "transcribed voice-note replies" },
+    ],
+    stack: ["TypeScript", "Node.js", "Fastify", "Microsoft Graph", "Baileys", "PostgreSQL", "Ollama", "n8n", "faster-whisper"],
+  },
+  {
     slug: "driver-inattention-monitoring",
     name: "Driver Inattention Monitoring System (DIMS)",
     shortName: "Driver Monitoring",
