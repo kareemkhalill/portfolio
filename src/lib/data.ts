@@ -1,5 +1,5 @@
 // Raw <a> hrefs don't get Next's basePath automatically (GitHub Pages serves under /<repo>).
-export const resumeHref = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Karim_Khalil_Resume.docx`;
+export const resumeHref = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Karim_Khalil_CV.pdf`;
 
 export const site = {
   name: "Karim Khalil",

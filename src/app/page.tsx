@@ -7,12 +7,6 @@ import ProjectCard from "@/components/ProjectCard";
 import SpotlightCard from "@/components/SpotlightCard";
 import WhatsAppDemo from "@/components/WhatsAppDemo";
 
-const stats = [
-  { big: "8", small: "systems shipped" },
-  { big: "RCU", small: "Royal Commission for AlUla" },
-  { big: "KSA", small: "based in Saudi Arabia" },
-];
-
 export default function Home() {
   const featured = projects.filter((p) => p.featured);
 
@@ -67,18 +61,6 @@ export default function Home() {
               <WhatsAppDemo />
             </Reveal>
           </div>
-
-          {/* Stats */}
-          <Reveal delay={0.4}>
-            <div className="mt-16 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border hairline bg-borderc">
-              {stats.map(({ big, small }) => (
-                <div key={small} className="bg-surface p-5 transition-colors hover:bg-surface-2">
-                  <p className="tabular text-2xl font-semibold tracking-tight text-accent">{big}</p>
-                  <p className="mt-1 text-sm text-faint">{small}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
         </div>
       </section>
 
