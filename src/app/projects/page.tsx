@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  const product = projects.filter((p) => p.category === "Full-Stack & AI Product");
   const llm = projects.filter((p) => p.category === "LLM & Automation");
   const cv = projects.filter((p) => p.category === "Computer Vision");
 
@@ -20,13 +19,6 @@ export default function ProjectsPage() {
         title="Case studies, not bullet points"
         description="Problem, architecture, challenges, outcome. Most with demos of the real system."
       />
-
-      <h2 className="mt-16 text-lg font-semibold text-foreground">Flagship product</h2>
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        {product.map((p, i) => (
-          <ProjectCard key={p.slug} project={p} delay={i * 0.05} />
-        ))}
-      </div>
 
       <h2 className="mt-16 text-lg font-semibold text-foreground">LLM applications & automation</h2>
       <div className="mt-6 grid gap-6 md:grid-cols-2">

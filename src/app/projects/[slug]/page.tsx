@@ -73,7 +73,28 @@ export default async function ProjectPage({
           <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold tracking-tight">
             {project.demoUrl ? "Live demo" : project.simulated ? "Interactive demo" : "Demo"}
           </h2>
-          {project.demoUrl ? (
+          {project.demoUrl && project.embedDemo ? (
+            <div>
+              <div className="overflow-hidden rounded-2xl border hairline bg-surface">
+                <iframe
+                  src={project.demoUrl}
+                  title={`${project.name} demo`}
+                  loading="lazy"
+                  className="h-[640px] w-full md:h-[780px]"
+                />
+              </div>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-accent hover:underline">
+                  Open demo in a new tab <ArrowRight size={14} />
+                </a>
+                {project.repoUrl && (
+                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-accent hover:underline">
+                    Source on GitHub <ArrowRight size={14} />
+                  </a>
+                )}
+              </div>
+            </div>
+          ) : project.demoUrl ? (
             <a
               href={project.demoUrl}
               target="_blank"

@@ -19,8 +19,10 @@ export type Project = {
   slug: string;
   name: string;
   shortName: string;
-  category: "Computer Vision" | "LLM & Automation" | "Full-Stack & AI Product";
+  category: "Computer Vision" | "LLM & Automation";
   demoUrl?: string;
+  repoUrl?: string;
+  embedDemo?: boolean;
   oneLiner: string;
   problem: string;
   solution: string;
@@ -36,44 +38,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "clientflow-pro",
-    name: "ClientFlow Pro",
-    shortName: "ClientFlow Pro",
-    category: "Full-Stack & AI Product",
+    slug: "date-palm-detection",
+    name: "Date Palm Detection & Counting (YOLO26)",
+    shortName: "Date Palm AI",
+    category: "Computer Vision",
     featured: true,
-    demoUrl: "https://clientflow-pro-demo.onrender.com",
+    demoUrl: "https://kareemkhalill.github.io/date-palm-ai/",
+    repoUrl: "https://github.com/kareemkhalill/date-palm-ai",
+    embedDemo: true,
     oneLiner:
-      "Bilingual CRM, booking, and invoicing platform. Self-hosted, with AI follow-ups and WhatsApp delivery.",
+      "Custom-trained YOLO26 counts every date palm in aerial imagery, per image or per farm polygon.",
     problem:
-      "Service businesses run their operation across tools that don't talk to each other: a CRM here, a booking calendar there, quotes in documents, invoices in spreadsheets, follow-ups tracked in someone's memory. Arabic-first businesses have it worse: most affordable software treats right-to-left layout as an afterthought. And subscription SaaS means the business's own client data lives on someone else's servers.",
+      "Date farms in AlUla are counted by hand or estimated from records. Walking thousands of farms is slow and expensive, numbers go stale, and there is no consistent way to compare one farm or region against another.",
     solution:
-      "I designed and built ClientFlow Pro end-to-end: a single self-hosted platform covering the whole client lifecycle, from leads and pipeline through appointment booking with conflict prevention, to quotes that convert into invoices with PDF export and token-secured public pages, payments, tasks, support tickets, expenses, automations, and analytics. Every screen works in English and Arabic with genuine right-to-left layout, not a translated skin. An optional AI layer (OpenAI or Anthropic) drafts follow-up messages from a client's history, and a WhatsApp integration delivers bookings, quotes, and invoices straight to the client's phone. Both stay dormant until the business owner supplies their own API keys.",
+      "I trained a YOLO26 detector on aerial palm imagery and wrapped it in a FastAPI application. A user uploads an aerial image, or picks farm polygons on a map, and gets a count plus a labelled image with one marker per palm crown. For farms, the app drives Google Earth Pro to capture the polygon at a fixed camera range, georeferences the capture, and counts only the palms whose centre falls inside the farm boundary.",
     architecture: [
-      { step: "Laravel 12 Monolith", detail: "PHP 8.4, Blade with Livewire 3 and Alpine.js for the reactive UI, Tailwind CSS throughout, deployable on ordinary shared hosting via a self-locking browser install wizard." },
-      { step: "Roles & Permissions", detail: "Owner, Manager, Staff, and Accountant roles with staff-scoped data visibility (Spatie Permission), plus an opt-in audit log of who changed what and when." },
-      { step: "Booking Engine", detail: "Staff availability, unavailable-date exceptions, double-booking prevention, a drag-to-reschedule time-grid calendar, and a rate-limited public booking page." },
-      { step: "Quotes to Invoices Lifecycle", detail: "Line items, proposal sections, PDF export, email delivery, typed-signature acceptance on token-gated public pages, one-click conversion, and payment tracking with automatic status rollup." },
-      { step: "Integrations Layer", detail: "WhatsApp via Meta's Cloud API, AI follow-up drafting through OpenAI or Anthropic, and SMTP, all off by default, secrets encrypted, failures logged without breaking the flow that triggered them." },
-      { step: "Extensibility & Ops", detail: "A Sanctum REST API, HMAC-signed webhooks, owner-defined automations, one-click backups, maintenance mode, and a system-health dashboard, all covered by an automated PHPUnit suite." },
+      { step: "Imagery Sources", detail: "Uploaded JPG/PNG, live captures driven from Google Earth Pro, or stored captures reused offline." },
+      { step: "Automatic Scale", detail: "The app measures median palm width and tiles the image so palms appear about 24 px wide at the model's 640 px input." },
+      { step: "YOLO26 Inference", detail: "Overlapping tiles run through the trained model on GPU with CPU fallback; detections from neighbouring tiles are merged." },
+      { step: "Farm Polygons", detail: "KML farm boundaries are georeferenced to the capture, so only palms inside a farm's polygon count toward its total." },
+      { step: "Farm Map & Export", detail: "A Leaflet map shows every farm coloured by count, with labelled images and a per-farm CSV export." },
     ],
     challenges: [
-      "Building a genuinely bilingual product: every screen works in English and Arabic with real right-to-left layout, not a bolted-on translation.",
-      "Designing a passwordless customer portal where signed, time-limited magic links give clients access to appointments, quotes, invoices, and documents with nothing to leak.",
-      "Making third-party integrations fail safely: WhatsApp, AI, and email calls are real HTTP integrations, but a failed send can never break the booking or invoice flow that triggered it.",
-      "Shipping it as a product rather than a project: an install wizard, buyer documentation, demo seed data, packaging, and license activation built for marketplace distribution.",
+      "Palm size in pixels changes with zoom, and counts swing with it, so scale is measured per image and tiling is chosen to match.",
+      "Dark or hazy imagery hides palms: the app measures brightness inside the polygon, brightens before detection, and warns that the count is an underestimate.",
+      "Dense plantations with touching crowns need a lower confidence threshold and cross-tile merging to avoid missed or double-counted palms.",
+      "Capturing thousands of farms reliably by automating Google Earth Pro, with georeferencing and stitching for large polygons.",
     ],
     impact: [
-      "Replaces four or five separate SaaS subscriptions with one self-hosted install the business owns outright.",
-      "Turns each client's pipeline status and history into a ready-to-review follow-up message, drafted in the business's own language.",
-      "Delivers bookings, quotes, and invoices over WhatsApp, the channel Gulf businesses actually use.",
-      "An automated test suite across every module keeps the codebase safe to extend.",
+      "Replaces a manual farm-by-farm count with a result in seconds per image.",
+      "Gives every farm a consistent, repeatable count that can be compared across farms, regions and imagery dates.",
+      "Stored captures keep the system working without Google Earth, so past counts can be re-run.",
     ],
     metrics: [
-      { value: "Tested", label: "automated PHPUnit suite" },
-      { value: "EN + AR", label: "full bilingual with true RTL" },
-      { value: "v1.1", label: "packaged, documented release" },
+      { value: "7,124", label: "farm polygons across 16 regions" },
+      { value: "~900", label: "palms counted in one dense scene" },
+      { value: "Seconds", label: "per image on a laptop GPU" },
     ],
-    stack: ["Laravel 12", "PHP 8.4", "Livewire 3", "Alpine.js", "Tailwind CSS", "MySQL", "Sanctum", "DomPDF"],
+    stack: ["Python", "YOLO26", "PyTorch", "OpenCV", "FastAPI", "Leaflet", "KML / GIS"],
   },
   {
     slug: "whatsapp-reporting-assistant",

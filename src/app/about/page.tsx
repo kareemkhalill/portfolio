@@ -25,7 +25,7 @@ export default function AboutPage() {
           <p>
             <span className="text-foreground">Now:</span> LLM assistants and automation that do real work,
             like a WhatsApp bot that returns a report in seconds. Plus{" "}
-            <span className="text-foreground">ClientFlow Pro</span>, my bilingual CRM product.
+            <span className="text-foreground">Date Palm AI</span>, a YOLO26 detector that counts palms from aerial imagery.
           </p>
           <p>
             <span className="text-foreground">Before:</span> computer vision in production. PPE compliance,
